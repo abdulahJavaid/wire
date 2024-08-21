@@ -71,9 +71,9 @@
               <a href="">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <!-- <a href="">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-              </a>
+              </a> -->
             </div>
           </div>
         </nav>
