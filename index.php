@@ -71,9 +71,9 @@
               <a href="">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <!-- <a href="">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-              </a>
+              </a> -->
             </div>
           </div>
         </nav>
@@ -83,7 +83,7 @@
     <!-- slider section -->
     <section class="slider_section ">
       <div class="slider_bg_box">
-        <img src="images/slider-bg.jpg" alt="">
+        <img src="images/pic.jpg" alt="">
       </div>
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
