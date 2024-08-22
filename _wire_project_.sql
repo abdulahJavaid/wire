@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2024 at 06:44 PM
+-- Generation Time: Aug 22, 2024 at 07:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -87,10 +87,13 @@ CREATE TABLE `warehouse` (
 CREATE TABLE `wholesaler` (
   `ws_id` int(11) NOT NULL,
   `ws_name` varchar(255) NOT NULL,
-  `ws_address` varchar(500) NOT NULL,
+  `ws_company_name` varchar(255) NOT NULL,
+  `ws_home_address` varchar(500) NOT NULL,
+  `ws_office_address` varchar(255) NOT NULL,
+  `ws_personal_contact` varchar(255) NOT NULL,
+  `ws_office_contact` varchar(255) NOT NULL,
+  `ws_cnic` varchar(100) NOT NULL,
   `ws_image` varchar(255) NOT NULL,
-  `ws_cnic` varchar(255) NOT NULL,
-  `ws_contact` varchar(100) NOT NULL,
   `ws_email` varchar(255) NOT NULL,
   `ws_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
