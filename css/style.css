@@ -957,5 +957,12 @@ a:focus {
 
 /* color black for backgorund */
 .color_black {
-  background: black!important;
+  background: black;
+}
+
+.info_section {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0;
+  margin-bottom: 0;
 }

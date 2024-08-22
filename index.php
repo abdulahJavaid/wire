@@ -292,6 +292,24 @@
       <td>the Bird</td>
       <td>@twitter</td>
     </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
   </tbody>
 </table>
       </div>
@@ -708,7 +726,7 @@
       </div>
       <div class="row">
 
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="info_contact">
             <h5>
               About Shop
@@ -739,7 +757,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="info_info">
             <h5>
               Informations
@@ -804,7 +822,7 @@
           </div>
         </div> -->
 
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="info_form ">
             <h5>
               Newsletter
@@ -837,7 +855,7 @@
     <div class="container">
       <p>
         &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Codsmine I.T Company</a>
+        <a href="codsmine.com">Codsmine I.T Company</a>
       </p>
     </div>
   </section>
