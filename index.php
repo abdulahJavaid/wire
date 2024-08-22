@@ -22,6 +22,8 @@
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
+  <!-- bs -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
@@ -37,7 +39,9 @@
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
+    <div class="navbar1">
       <div class="container-fluid">
+        
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
@@ -78,12 +82,13 @@
           </div>
         </nav>
       </div>
+      </div>
     </header>
     <!-- end header section -->
     <!-- slider section -->
     <section class="slider_section ">
       <div class="slider_bg_box">
-        <img src="images/pic.jpg" alt="">
+        <img src="images/sliderr.jpeg" alt="">
       </div>
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -178,7 +183,7 @@
 
   <!-- service section -->
 
-  <section class="service_section">
+  <!-- <section class="service_section">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 col-lg-3">
@@ -243,54 +248,60 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- end service section -->
-
-
-  <!-- about section -->
-
-  <section class="about_section layout_padding">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="img_container">
-            <div class="img-box b1">
-              <img src="images/earpods.jpg" alt="">
-            </div>
-            <div class="img-box b2">
-              <img src="images/mobile2.jpg" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <h2>
-              About Our Shop
-            </h2>
-            <p>
-              There are many variations of passages of Lorem Ipsum
-              There are many variations of
-              passages of Lorem Ipsum
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end about section -->
+  
+    <!-- <br>
+    <br> -->
+    
 
 
   <!-- product section -->
 
-  <section class="product_section ">
+  <section class="product_secton">
+
+  <div class="row">
+    <div class="container">
+      <div class="col-md-8 offset-md-2">
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+    </div>
+  </div>
+    <!-- <div class="list-product">
     <div class="container">
       <div class="product_heading">
         <h2>
-          Top Sale Watches
+          Top Sale accorries
         </h2>
       </div>
       <div class="product_container">
@@ -398,13 +409,14 @@
         </div>
       </div>
     </div>
+    </div> -->
   </section>
 
   <!-- end product section -->
 
 
   <!-- product section -->
-
+<!-- 
   <section class="product_section ">
     <div class="container">
       <div class="product_heading">
@@ -517,14 +529,14 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
   <!-- end product section -->
 
 
   <!-- product section -->
-
+<!-- 
   <section class="product_section ">
     <div class="container">
       <div class="product_heading">
@@ -637,13 +649,13 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
   <!-- end product section -->
 
   <!-- contact section -->
-  <section class="contact_section layout_padding">
+  <!-- <section class="contact_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -683,11 +695,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- end contact section -->
 
   <!-- info section -->
-  <section class="info_section layout_padding2">
+  <section class="info_section layout_padding2 color_black">
     <div class="container">
       <div class="info_logo">
         <h2>
@@ -821,19 +833,26 @@
         </div>
       </div>
     </div>
+    
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Codsmine I.T Company</a>
+      </p>
+    </div>
   </section>
 
   <!-- end info_section -->
 
   <!-- footer section -->
-  <section class="footer_section">
+  <!-- <section class="footer_section">
     <div class="container">
       <p>
         &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        <a href="https://html.design/">Codsmine I.T Company</a>
       </p>
     </div>
-  </section>
+  </section> -->
   <!-- footer section -->
 
   <!-- jQery -->
