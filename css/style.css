@@ -966,3 +966,43 @@ a:focus {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+
+/* signup from css */
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 1.15;
+  padding-left: .75em;
+  padding-right: .75em;
+  }
+  .card-registration .select-arrow {
+  top: 13px;
+  }
+    /* Set the card text and heading to white color */
+    .card-body.text-black h3,
+    .card-body.text-black label {
+      color: white !important;
+    }
+  
+    /* Set input fields to have a dark background and red border */
+    .card-body.text-black input.form-control {
+      color: white !important; /* Change text color inside input to white */
+      background-color: #333 !important; /* Dark background color for input */
+      border-color: red !important; /* Red border */
+    
+    }
+  
+    /* Darken the placeholder text inside the input fields */
+    .card-body.text-black input.form-control::placeholder {
+      color: #888 !important; /* Lighter dark color for placeholder text */
+    }
+  
+    /* Optional: Add focus effect for input fields */
+    .card-body.text-black input.form-control:focus {
+      box-shadow: 0 0 5px red;
+      border-color: red !important;
+      line-height: 5px;
+    }
+    /* end sign up form */
+  
