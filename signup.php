@@ -53,7 +53,7 @@ include ("conn.php");
       $ws_password = $_POST["ws_password"];
 
       // File upload handling
-      $target_dir = "./uploads"; // Directory where the file will be saved
+      $target_dir = "./uploads/"; // Directory where the file will be saved
       $target_file = $target_dir . basename($_FILES["ws_image"]["name"]); // Path of the uploaded file
       $ws_image = basename($_FILES["ws_image"]["name"]);
       $uploadOk = 1; // Flag to check if file is uploaded successfully
@@ -107,11 +107,6 @@ include ("conn.php");
 
 ?>
 
-
-
-
-
-
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -130,9 +125,6 @@ include ("conn.php");
     </header>
     <!-- end header section -->
 
-
-
-
 <section class="h-100 bg-light">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -140,14 +132,17 @@ include ("conn.php");
         <div class="card card-registration bg-dark my-4">
           <div class="row g-0">
             <div class="col-xl-6 d-none d-xl-block">
-              <img src="images/banner.jpeg" alt="Sample photo" class="img-fluid"
+              <img src="images/signup.jpeg" alt="Sample photo" class="img-fluid"
                 style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
             </div>
             <div class="col-xl-6">
               <div class="card-body p-md-2 text-black">
                 <h3 class="mb-5 text-uppercase">Supplier Registration</h3>
 
-                <!-- Form starts here -->
+       
+
+
+    
                 <form action="" method="POST" enctype="multipart/form-data">
                   
                 <div data-mdb-input-init class="form-outline mb-2">
@@ -158,13 +153,13 @@ include ("conn.php");
                   <div class="row">
                     <div class="col-md-6 mb-2">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3Example1m" name="ws_name" class="form-control form-control-sm" required />
+                        <input type="text" id="form3Example1m" name="ws_name" class="form-control form-control-sm" placeholder="Enter Name" required />
                         <label class="form-label" for="form3Example1m">Name</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-2">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3Example1n" name="ws_company_name" class="form-control form-control-sm" />
+                        <input type="text" id="form3Example1n" name="ws_company_name" class="form-control form-control-sm" placeholder="company name(optional)" />
                         <label class="form-label" for="form3Example1n">Company Name</label>
                       </div>
                     </div>
@@ -173,52 +168,61 @@ include ("conn.php");
                   <div class="row">
                     <div class="col-md-6 mb-2">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3Example1m1" name="ws_home_address" class="form-control form-control-sm" required />
+                        <input type="text" id="form3Example1m1" name="ws_home_address" class="form-control form-control-sm" placeholder="Enter Home address" required />
                         <label class="form-label" for="form3Example1m1">Home Address</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-2">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3Example1n1" name="ws_office_address" class="form-control form-control-sm" required />
+                        <input type="text" id="form3Example1n1" name="ws_office_address" class="form-control form-control-sm" placeholder="Enter Office address " required />
                         <label class="form-label" for="form3Example1n1">Office Address</label>
                       </div>
                     </div>
                   </div>
 
                   <div class="row">
-                    <div class="col-md-6 mb-2">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3Example1m1" name="ws_personal_contact" class="form-control form-control-sm"/>
-                        <label class="form-label" for="form3Example1m1">Personal Contact</label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-2">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3Example1n1" name="ws_office_contact" class="form-control form-control-sm" required />
-                        <label class="form-label" for="form3Example1n1">Office Contact</label>
-                      </div>
-                    </div>
-                  </div>
+  <div class="col-md-6 mb-2">
+    <div data-mdb-input-init class="form-outline">
+      <input type="tel" id="form3Example1m1" name="ws_personal_contact" placeholder="+92XXXXXXXXXX" 
+        pattern="\+92\d{10}" maxlength="13" class="form-control form-control-sm" required />
+      <label class="form-label" for="form3Example1m1">Personal Contact</label>
+    </div>
+  </div>
+  <div class="col-md-6 mb-2">
+    <div data-mdb-input-init class="form-outline">
+      <input type="tel" id="form3Example1n1" name="ws_office_contact" placeholder="+92XXXXXXXXXX" 
+        pattern="\+92\d{10}" maxlength="13" class="form-control form-control-sm" required />
+      <label class="form-label" for="form3Example1n1">Office Contact</label>
+    </div>
+  </div>
+</div>
+
 
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <input type="text" id="form3Example9" name="ws_cnic" class="form-control form-control-sm" required />
-                    <label class="form-label" for="form3Example9">Wholesaler CNIC</label>
-                  </div>
+                  <input type="text" id="cnic" name="ws_cnic" placeholder="XXXXX-XXXXXXX-X" 
+                     pattern="\d{5}-\d{7}-\d{1}" maxlength="15" class="form-control form-control-sm" required />
+                     <label class="form-label" for="form3example99">Wholesaler CNIC</label>
+                     </div>
 
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <input type="text" id="form3Example99" name="ws_email" class="form-control form-control-sm"  required />
+                    <input type="email" id="form3Example99" name="ws_email" class="form-control form-control-sm" placeholder="e.g Wire@gmail.com"  required />
                     <label class="form-label" for="form3Example99">Email Address</label>
                   </div>
 
-                  <div data-mdb-input-init class="form-outline mb-2">
-                    <input type="text" id="form3Example97" name="ws_password" class="form-control form-control-sm" required />
-                    <label class="form-label" for="form3Example97">Password</label>
-                  </div>
+
+
+   
+
 
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <input type="text" id="form3Example97" name="ws_repassword" class="form-control form-control-sm" required />
-                    <label class="form-label" for="form3Example97">Re Enter Password</label>
-                  </div>
+    <input type="password" id="form3Example97" name="ws_password" class="form-control form-control-sm" placeholder="Enter your password" required />
+    <label class="form-label" for="form3Example97">Password</label>
+  </div>
+
+  <div data-mdb-input-init class="form-outline mb-2">
+    <input type="password" id="form3Example98" name="ws_repassword" class="form-control form-control-sm" placeholder="Enter your password" required />
+    <label class="form-label" for="form3Example98">Re-enter Password</label>
+  </div>
 
 
               <div class="d-flex justify-content-end pt-2">
