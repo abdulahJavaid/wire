@@ -35,11 +35,11 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .heading_container h2 {
@@ -53,8 +53,8 @@ body {
 
 .heading_container.heading_center {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -73,7 +73,7 @@ a:focus {
 .btn:focus {
   outline: none !important;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 /*header section*/
@@ -85,8 +85,8 @@ a:focus {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .sub_page .hero_area {
@@ -96,7 +96,7 @@ a:focus {
 .sub_page .header_section {
   margin-top: 0;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
 }
 
 .header_section .container-fluid {
@@ -129,7 +129,8 @@ a:focus {
   transition: all 0.3s;
 }
 
-.custom_nav-container .navbar-nav .nav-item:hover .nav-link, .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+.custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+.custom_nav-container .navbar-nav .nav-item.active .nav-link {
   color: black;
   background-color: #eb1616;
 }
@@ -171,7 +172,8 @@ a:focus {
   transition: all 0.3s;
 }
 
-.custom_nav-container .navbar-toggler span::before, .custom_nav-container .navbar-toggler span::after {
+.custom_nav-container .navbar-toggler span::before,
+.custom_nav-container .navbar-toggler span::after {
   content: "";
   position: absolute;
   left: 0;
@@ -190,23 +192,24 @@ a:focus {
 
 .custom_nav-container .navbar-toggler[aria-expanded="true"] {
   -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .custom_nav-container .navbar-toggler[aria-expanded="true"] span {
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
-.custom_nav-container .navbar-toggler[aria-expanded="true"] span::before, .custom_nav-container .navbar-toggler[aria-expanded="true"] span::after {
+.custom_nav-container .navbar-toggler[aria-expanded="true"] span::before,
+.custom_nav-container .navbar-toggler[aria-expanded="true"] span::after {
   -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
   top: 0;
 }
 
 .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-1 {
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   margin: 0;
   margin-bottom: -4px;
 }
@@ -217,7 +220,7 @@ a:focus {
 
 .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-3 {
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
   margin: 0;
   margin-top: -4px;
 }
@@ -226,7 +229,7 @@ a:focus {
 .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-2,
 .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-3 {
   -webkit-transform: none;
-          transform: none;
+  transform: none;
 }
 
 .user_optio_box :hover {
@@ -238,28 +241,28 @@ a:focus {
 
 .user_optio_box a {
   margin-right: 50px;
-  color:white;
+  color: white;
 }
 
 /*end header section*/
 /* slider section */
 .slider_section {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
 }
 
 .slider_section .row {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .slider_section #customCarousel1 {
@@ -332,11 +335,11 @@ a:focus {
   position: unset;
   margin: 0;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 45px;
 }
 
@@ -363,11 +366,11 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -396,7 +399,7 @@ a:focus {
 .service_section .box .img-box img {
   height: 100%;
   -webkit-filter: brightness(0);
-          filter: brightness(0);
+  filter: brightness(0);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -421,7 +424,7 @@ a:focus {
 
 .service_section .box:hover .img-box img {
   -webkit-filter: brightness(1);
-          filter: brightness(1);
+  filter: brightness(1);
 }
 
 .about_section {
@@ -430,8 +433,8 @@ a:focus {
 
 .about_section .row {
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 .about_section .img_container {
@@ -439,19 +442,19 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1.2;
-      -ms-flex: 1.2;
-          flex: 1.2;
+  -ms-flex: 1.2;
+  flex: 1.2;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .about_section .img_container .img-box {
   position: relative;
   margin: 0 10px;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .about_section .img_container .img-box img {
@@ -472,7 +475,7 @@ a:focus {
 
 .about_section .img_container .img-box.b1::before {
   -webkit-transform: translateY(75px);
-          transform: translateY(75px);
+  transform: translateY(75px);
 }
 
 .about_section .img_container .img-box.b2 {
@@ -481,13 +484,13 @@ a:focus {
 
 .about_section .img_container .img-box.b2::before {
   -webkit-transform: translateY(-75px);
-          transform: translateY(-75px);
+  transform: translateY(-75px);
 }
 
 .about_section .detail-box {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   padding-left: 3%;
   padding-right: 10%;
 }
@@ -541,10 +544,10 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0 -10px;
 }
 
@@ -555,11 +558,11 @@ a:focus {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 0 10px 45px 10px;
 }
 
@@ -571,11 +574,11 @@ a:focus {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 15px;
 }
 
@@ -593,8 +596,8 @@ a:focus {
   display: flex;
   width: 100%;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .product_section .product_container .box .box-content .detail-box .text,
@@ -604,14 +607,19 @@ a:focus {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.product_section .product_container .box .box-content .detail-box .star_container {
+.product_section
+  .product_container
+  .box
+  .box-content
+  .detail-box
+  .star_container {
   color: #e2ba1b;
 }
 
@@ -620,8 +628,8 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-top: 35px;
 }
 
@@ -646,8 +654,8 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 45px 0;
 }
 
@@ -671,8 +679,8 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .client_section .box .client_info .client_name h5 {
@@ -703,18 +711,18 @@ a:focus {
   background-color: #ffffff;
   padding: 45px 45px 45px 85px;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .client_section .carousel-indicators {
   position: unset;
   margin: 0;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 45px;
 }
 
@@ -757,7 +765,7 @@ a:focus {
   outline: none;
   color: #101010;
   -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
 }
 
 .contact_section .form_container input::-webkit-input-placeholder {
@@ -804,16 +812,16 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   padding: 0;
 }
 
 .contact_section .map_container .map {
   height: 100%;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .contact_section .map_container .map #googleMap {
@@ -853,11 +861,11 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #ffffff;
   padding: 15px;
 }
@@ -868,8 +876,8 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .info_section .info_contact p {
@@ -881,8 +889,8 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 20px 0;
 }
 
@@ -945,15 +953,16 @@ a:focus {
 }
 /*# sourceMappingURL=style.css.map */
 
-
+/* ***********
+Custom Code for CSS Codesmine
+************ */
 
 /* navbar styling strat */
 
-.navbar1{
+.navbar1 {
   background-color: #000000;
   color: white;
 }
-
 
 /* color black for backgorund */
 .color_black {
@@ -967,42 +976,106 @@ a:focus {
   margin-bottom: 0;
 }
 
-
 /* signup from css */
 
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
   font-size: 1rem;
   line-height: 1.15;
-  padding-left: .75em;
-  padding-right: .75em;
-  }
-  .card-registration .select-arrow {
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+.card-registration .select-arrow {
   top: 13px;
-  }
-    /* Set the card text and heading to white color */
-    .card-body.text-black h3,
-    .card-body.text-black label {
-      color: white !important;
-    }
-  
-    /* Set input fields to have a dark background and red border */
-    .card-body.text-black input.form-control {
-      color: white !important; /* Change text color inside input to white */
-      background-color: #333 !important; /* Dark background color for input */
-      border-color: red !important; /* Red border */
-    
-    }
-  
-    /* Darken the placeholder text inside the input fields */
-    .card-body.text-black input.form-control::placeholder {
-      color: #888 !important; /* Lighter dark color for placeholder text */
-    }
-  
-    /* Optional: Add focus effect for input fields */
-    .card-body.text-black input.form-control:focus {
-      box-shadow: 0 0 5px red;
-      border-color: red !important;
-      line-height: 5px;
-    }
-    /* end sign up form */
-  
+}
+/* Set the card text and heading to white color */
+.card-body.text-black h3,
+.card-body.text-black label {
+  color: white !important;
+}
+
+/* Set input fields to have a dark background and red border */
+.card-body.text-black input.form-control {
+  color: white !important; /* Change text color inside input to white */
+  background-color: #333 !important; /* Dark background color for input */
+  border-color: red !important; /* Red border */
+}
+
+/* Darken the placeholder text inside the input fields */
+.card-body.text-black input.form-control::placeholder {
+  color: #888 !important; /* Lighter dark color for placeholder text */
+}
+
+/* Optional: Add focus effect for input fields */
+.card-body.text-black input.form-control:focus {
+  box-shadow: 0 0 5px red;
+  border-color: red !important;
+  line-height: 5px;
+}
+/* end sign up form */
+
+
+/* Style to remove margin of footer */
+.footer-p {
+  margin-bottom: 0;
+}
+
+/* Style for the website to use this font */
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Style for h3 (listed items) on index page */
+#h3-ws-index {
+  margin-top: 30%;
+  margin-bottom: 10%;
+}
+#h3-ws-index h3:before {
+    background-color: red;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0;
+}
+#h3-ws-index h3:after {
+    background-color: red;
+    content: '';
+    display: block;
+  position:absolute; right:0; bottom:0;
+    height: 3px;
+    width: 75px;
+    margin-right: 15px;
+    margin-bottom: 8%;
+}
+
+/* Padding for wholesaler index page */
+.padding-ws-index {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+/* Style for h2 on list product page */
+#h2-ws-index {
+  margin-top: 30%;
+  margin-bottom: 10%;
+}
+#h2-ws-index h2:before {
+    background-color: red;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0;
+}
+#h2-ws-index h2:after {
+    background-color: red;
+    content: '';
+    display: block;
+  position:absolute; right:0; bottom:0;
+    height: 3px;
+    width: 75px;
+    margin-right: 15px;
+    margin-bottom: 8%;
+}

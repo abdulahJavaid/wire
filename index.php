@@ -1,237 +1,70 @@
 <?php // requiring the header of page
 require_once("includes/header.php");
 ?>
-    <!-- slider section -->
-    <section class="slider_section ">
-      <div class="slider_bg_box">
-        <img src="images/new.png" alt="">
-      </div>
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="detail-box">
-                    <h1>
-                      Welcome to Wire
-                    </h1>
-                    <p>
-                     At wire platform, we specialize in providing high-quality mobile accessories at wholesale prices.
-                      Whether you're looking for the latest phone cases, chargers, or other essential accessories, we've got you covered..
-                    </p>
-                    
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact Us
-                      </a>
-                      <a href="" class="btn2">
-                        About Us
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="detail-box">
-                    <h1>
-                      Welcome To Wire
-                    </h1>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo maxime voluptatem a itaque suscipit.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact Us
-                      </a>
-                      <a href="" class="btn2">
-                        About Us
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="detail-box">
-                    <h1>
-                      Stylish Watches
-                    </h1>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo maxime voluptatem a itaque suscipit.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact Us
-                      </a>
-                      <a href="" class="btn2">
-                        About Us
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-         
-      
-        </div>
-        <ol class="carousel-indicators">
-          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-          <li data-target="#customCarousel1" data-slide-to="1"></li>
-          <li data-target="#customCarousel1" data-slide-to="2"></li>
-                 </ol>
-      </div>
+<?php // requiring the slider of page
+require_once("includes/slider.php");
+?>
 
-    </section>
-    <!-- end slider section -->
-  </div>
+<!-- Section for supplire/wholesaler to view listed items -->
+<section>
 
-
-  <!-- service section -->
-
-  <!-- <section class="service_section">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/feature-1.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Fast Delivery
-              </h5>
-              <p>
-                variations of passages of Lorem Ipsum available
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/feature-2.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Free Shiping
-              </h5>
-              <p>
-                variations of passages of Lorem Ipsum available
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/feature-3.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Best Quality
-              </h5>
-              <p>
-                variations of passages of Lorem Ipsum available
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/feature-4.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                24x7 Customer support
-              </h5>
-              <p>
-                variations of passages of Lorem Ipsum available
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- end service section -->
-  
-    <!-- <br>
-    <br> -->
-    
-
-
-  <!-- product section -->
-
-  <section class="product_secton">
-
+<div class="padding-ws-index">
   <div class="row">
-    <div class="container">
-      <div class="col-md-8 offset-md-2">
-      <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <th scope="row">6</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+    <div class="col-auto">
+      <div id="h3-ws-index">
+        <h3 class="anton-regular">My listed items</h3>
       </div>
     </div>
   </div>
-    <!-- <div class="list-product">
+</div>
+
+<div class="padding-ws-index">
+  <div class="row">
+    <div class="container-fluid">
+      <div class="col-auto">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Brand</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Sold</th>
+              <th scope="col">Total Cost</th>
+              <th scope="col">Agreement date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            // selecting all the listed items of this seller
+            $query = "SELECT * FROM items INNER JOIN item_tracking ON ";
+            $query .= "items.fk_item_tracking_id=item_tracking.item_tracking_id WHERE ";
+            $query .= "fk_ws_id='1'";
+
+            $result = mysqli_query($conn, $query);
+            while($row = mysqli_fetch_assoc($result)){
+              $q = $row['item_quantity'];
+              $p = $row['item_price'];
+              $t = $q*$p;
+?>
+<tr>
+  <td><?php echo $row['item_category']; ?></td>
+  <td><?php echo $row['item_brand']; ?></td>
+  <td><?php echo $row['item_price']; ?></td>
+  <td><?php echo $row['item_quantity']; ?></td>
+  <td><?php echo $row['item_sold']; ?></td>
+  <td><?php echo $t; ?></td>
+  <td><?php echo $row['agreement_date']; ?></td>
+</tr>
+
+<?php
+// end of loop to show listed items
+            }
+            ?>
+          </tbody>
+        </table>
+        </div></div></div></div>
+        <!-- <div class="list-product">
     <div class="container">
       <div class="product_heading">
         <h2>
@@ -344,12 +177,12 @@ require_once("includes/header.php");
       </div>
     </div>
     </div> -->
-  </section>
+</section>
 
-  <!-- end product section -->
+<!-- end product section -->
 
 
-  <!-- product section -->
+<!-- product section -->
 <!-- 
   <section class="product_section ">
     <div class="container">
@@ -466,10 +299,10 @@ require_once("includes/header.php");
   </section> -->
 
 
-  <!-- end product section -->
+<!-- end product section -->
 
 
-  <!-- product section -->
+<!-- product section -->
 <!-- 
   <section class="product_section ">
     <div class="container">
@@ -586,10 +419,10 @@ require_once("includes/header.php");
   </section> -->
 
 
-  <!-- end product section -->
+<!-- end product section -->
 
-  <!-- contact section -->
-  <!-- <section class="contact_section layout_padding">
+<!-- contact section -->
+<!-- <section class="contact_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -630,7 +463,7 @@ require_once("includes/header.php");
       </div>
     </div>
   </section> -->
-  <!-- end contact section -->
+<!-- end contact section -->
 
 <?php // requiring the footer of page
 require_once("includes/footer.php");

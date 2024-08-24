@@ -135,7 +135,7 @@
     </div>
     
     <div class="container">
-      <p>
+      <p class="footer-p">
         &copy; <span id="displayYear"></span> All Rights Reserved By
         <a href="codsmine.com">Codsmine I.T Company</a>
       </p>
