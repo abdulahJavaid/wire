@@ -61,6 +61,9 @@ if (isset($_POST['add'])) {
                 <div class="card-body text-dark">
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="row mb-3">
+                        <label for="item_category" class="form-label"><u>Warehouse</u></label>
+                        </div>
+                        <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="item_category" class="form-label"><u>Category</u></label>
                                 <select name="item_category" class="form-select form-select-lg" required>
@@ -97,33 +100,33 @@ if (isset($_POST['add'])) {
 
                         <!-- File Input Section with Image Placeholder -->
                         <!-- <div class="mb-3">
-    <label for="item_image" class="form-label"><u>Image</u></label>
-    <div class="text-center">
-        <img id="imagePreview" src="https://via.placeholder.com/100" alt="Image Preview" class="rounded mb-2" style="max-width: 100px;">
-    </div>
-    <div class="input-group justify-content-center">
-        <input type="file" name="item_image" class="form-control d-none" id="fileInput" required onchange="previewImage(event)">
-        <button class="btn btn-secondary" type="button" id="uploadButton">
-            <i class="bi bi-upload"></i>
-        </button>&nbsp;
-        <button class="btn btn-danger" type="button" id="deleteButton">
-            <i class="bi bi-trash"></i>
-        </button>
-    </div>
-</div> -->
+                            <label for="item_image" class="form-label"><u>Image</u></label>
+                            <div class="text-center">
+                                <img id="imagePreview" src="https://via.placeholder.com/100" alt="Image Preview" class="rounded mb-2" style="max-width: 100px;">
+                            </div>
+                            <div class="input-group justify-content-center">
+                                <input type="file" name="item_image" class="form-control d-none" id="fileInput" required onchange="previewImage(event)">
+                                <button class="btn btn-secondary" type="button" id="uploadButton">
+                                    <i class="bi bi-upload"></i>
+                                </button>&nbsp;
+                                <button class="btn btn-danger" type="button" id="deleteButton">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div> -->
                         <!-- <div class="mb-3">
-    <label for="item_image" class="form-label"><u>Image</u></label>
-    <div class="input-group align-items-center">
-        <input type="file" name="item_image" class="form-control d-none" id="fileInput" required onchange="previewImage(event)">
-        <button class="btn btn-secondary" type="button" id="uploadButton">
-            <i class="bi bi-upload"></i>
-        </button>&nbsp;
-        <button class="btn btn-danger" type="button" id="deleteButton">
-            <i class="bi bi-trash"></i>
-        </button>&nbsp;
-        <img id="imagePreview" src="https://via.placeholder.com/100" alt="Image Preview" class="rounded ms-2" style="max-width: 100px;">
-    </div>
-</div> -->
+                            <label for="item_image" class="form-label"><u>Image</u></label>
+                            <div class="input-group align-items-center">
+                                <input type="file" name="item_image" class="form-control d-none" id="fileInput" required onchange="previewImage(event)">
+                                <button class="btn btn-secondary" type="button" id="uploadButton">
+                                    <i class="bi bi-upload"></i>
+                                </button>&nbsp;
+                                <button class="btn btn-danger" type="button" id="deleteButton">
+                                    <i class="bi bi-trash"></i>
+                                </button>&nbsp;
+                                <img id="imagePreview" src="https://via.placeholder.com/100" alt="Image Preview" class="rounded ms-2" style="max-width: 100px;">
+                            </div>
+                        </div> -->
                         <div class="mb-3">
                             <label for="item_image" class="form-label"><u>Image</u></label>
                             <div class="input-group">
@@ -159,33 +162,6 @@ if (isset($_POST['add'])) {
         </div>
     </div>
 </div>
-
-<script>
-    document.getElementById('uploadButton').addEventListener('click', function() {
-        document.getElementById('fileInput').click();
-    });
-
-    document.getElementById('deleteButton').addEventListener('click', function() {
-        document.getElementById('fileInput').value = '';
-        document.getElementById('imagePreview').src = 'https://via.placeholder.com/100';
-    });
-
-    function previewImage(event) {
-        const reader = new FileReader();
-        reader.onload = function() {
-            const output = document.getElementById('imagePreview');
-            output.src = reader.result;
-        }
-        reader.readAsDataURL(event.target.files[0]);
-    }
-</script>
-
-<!-- Add Bootstrap Icons CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-
-
-
 
 </section>
 

@@ -1,55 +1,55 @@
 <!-- footer section -->
 <section class="info_section layout_padding2 color_black">
-    <div class="container">
-      <div class="info_logo">
-        <h2>
-          HandTime
-        </h2>
-      </div>
-      <div class="row">
+  <div class="container">
+    <div class="info_logo">
+      <h2>
+        HandTime
+      </h2>
+    </div>
+    <div class="row">
 
-        <div class="col-md-4">
-          <div class="info_contact">
-            <h5>
-              About Shop
-            </h5>
-            <div>
-              <div class="img-box">
-                <img src="images/location-white.png" width="18px" alt="">
-              </div>
-              <p>
-                Address
-              </p>
+      <div class="col-md-4">
+        <div class="info_contact">
+          <h5>
+            About Shop
+          </h5>
+          <div>
+            <div class="img-box">
+              <img src="images/location-white.png" width="18px" alt="">
             </div>
-            <div>
-              <div class="img-box">
-                <img src="images/telephone-white.png" width="12px" alt="">
-              </div>
-              <p>
-                +01 1234567890
-              </p>
-            </div>
-            <div>
-              <div class="img-box">
-                <img src="images/envelope-white.png" width="18px" alt="">
-              </div>
-              <p>
-                demo@gmail.com
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="info_info">
-            <h5>
-              Informations
-            </h5>
             <p>
-              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              Address
+            </p>
+          </div>
+          <div>
+            <div class="img-box">
+              <img src="images/telephone-white.png" width="12px" alt="">
+            </div>
+            <p>
+              +01 1234567890
+            </p>
+          </div>
+          <div>
+            <div class="img-box">
+              <img src="images/envelope-white.png" width="18px" alt="">
+            </div>
+            <p>
+              demo@gmail.com
             </p>
           </div>
         </div>
-<!-- 
+      </div>
+      <div class="col-md-4">
+        <div class="info_info">
+          <h5>
+            Informations
+          </h5>
+          <p>
+            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          </p>
+        </div>
+      </div>
+      <!-- 
         <div class="col-md-3">
           <div class="info_insta">
             <h5>
@@ -104,48 +104,48 @@
           </div>
         </div> -->
 
-        <div class="col-md-4">
-          <div class="info_form ">
-            <h5>
-              Newsletter
-            </h5>
-            <form action="">
-              <input type="email" placeholder="Enter your email">
-              <button>
-                Subscribe
-              </button>
-            </form>
-            <div class="social_box">
-              <a href="">
-                <img src="images/fb.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/twitter.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/linkedin.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/youtube.png" alt="">
-              </a>
-            </div>
+      <div class="col-md-4">
+        <div class="info_form ">
+          <h5>
+            Newsletter
+          </h5>
+          <form action="">
+            <input type="email" placeholder="Enter your email">
+            <button>
+              Subscribe
+            </button>
+          </form>
+          <div class="social_box">
+            <a href="">
+              <img src="images/fb.png" alt="">
+            </a>
+            <a href="">
+              <img src="images/twitter.png" alt="">
+            </a>
+            <a href="">
+              <img src="images/linkedin.png" alt="">
+            </a>
+            <a href="">
+              <img src="images/youtube.png" alt="">
+            </a>
           </div>
         </div>
       </div>
     </div>
-    
-    <div class="container">
-      <p class="footer-p">
-        &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="codsmine.com">Codsmine I.T Company</a>
-      </p>
-    </div>
-  </section>
+  </div>
 
-  <!-- end info_section -->
+  <div class="container">
+    <p class="footer-p">
+      &copy; <span id="displayYear"></span> All Rights Reserved By
+      <a href="codsmine.com">Codsmine I.T Company</a>
+    </p>
+  </div>
+</section>
 
-  <!-- footer section -->
-  <!-- <section class="footer_section">
+<!-- end info_section -->
+
+<!-- footer section -->
+<!-- <section class="footer_section">
     <div class="container">
       <p>
         &copy; <span id="displayYear"></span> All Rights Reserved By
@@ -153,21 +153,24 @@
       </p>
     </div>
   </section> -->
-  <!-- footer section -->
+<!-- footer section -->
 
-  <!-- jQery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <!-- bootstrap js -->
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <!-- custom js -->
-  <script type="text/javascript" src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
+
+<!-- Add Bootstrap Icons CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<!-- jQery -->
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<!-- popper js -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<!-- bootstrap js -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- custom js -->
+<script type="text/javascript" src="js/custom.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+</script>
+<!-- End Google Map -->
 
 </body>
 

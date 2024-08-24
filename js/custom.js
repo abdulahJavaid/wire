@@ -142,3 +142,28 @@ $(document).ready(function() {
             }, 'json');
         });
 });
+
+
+//
+// code for the image select and view on the list item form
+// 
+document.getElementById('uploadButton').addEventListener('click', function() {
+    document.getElementById('fileInput').click();
+});
+
+document.getElementById('deleteButton').addEventListener('click', function() {
+    document.getElementById('fileInput').value = '';
+    document.getElementById('imagePreview').src = 'https://via.placeholder.com/100';
+});
+
+function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+        const output = document.getElementById('imagePreview');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+//
+// code for the image select and view on the list item form
+//
