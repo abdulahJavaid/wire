@@ -1,4 +1,9 @@
 <!-- Footer Start -->
+<?php
+        // getting the url of the page
+        $uri = "" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "";
+        if (!str_contains($uri, 'login.php')) {
+        ?>
 <div class="container-fluid pt-4 px-4">
     <div class="bg-secondary rounded-top p-4">
         <div class="row">
@@ -13,6 +18,10 @@
         </div>
     </div>
 </div>
+<?php
+// end of if statement
+}
+?>
 <!-- Footer End -->
 </div>
 <!-- Content End -->
