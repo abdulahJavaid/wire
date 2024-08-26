@@ -40,8 +40,8 @@ require_once("includes/slider.php");
                 <th scope="col">Cost (unslod)</th>
                 <th scope="col">Earnings (sold)</th>
                 <th scope="col">Agreement expiry date</th>
-                <th scope="col">View</th>
                 <th scope="col">Add more quantity</th>
+                <th scope="col">View</th>
               </tr>
             </thead>
             <tbody>
@@ -79,8 +79,8 @@ require_once("includes/slider.php");
                     }
                     ?>
                   </td>
-                  <td><button class="btn btn-sm btn-danger">View</button></td>
                   <td><button class="btn btn-sm btn-danger">Add</button></td>
+                  <td><button class="btn btn-sm btn-danger">View</button></td>
                 </tr>
 
               <?php
