@@ -9,6 +9,8 @@ ob_start();
 require_once(__DIR__ . "/../connection/configs.php");
 // the database connection file
 require_once(__DIR__ . "/../connection/connection.php");
+// the functions file
+require_once(__DIR__ . "/functions.php");
 
 
 

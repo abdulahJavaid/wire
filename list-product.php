@@ -6,13 +6,19 @@ require_once("includes/header.php");
 // adding data for the entered item
 if (isset($_POST['add'])) {
     $category = $_POST['item_category'];
+    $category = escape($category);
     $brand = $_POST['item_brand'];
+    $brand = escape($brand);
     $price = $_POST['item_price'];
+    $price = escape($price);
     $quantity = $_POST['item_quantity'];
+    $quantity = escape($quantity);
     $description = $_POST['item_description'];
+    $description = escape($description);
 
     $tmp = $_FILES['item_image']['tmp_name'];
     $image = $_FILES['item_image']['name'];
+    $image = escape($image);
     move_uploaded_file($tmp, __DIR__ . "/uploads/item-images/" . $image);
 
     $query = "SELECT item_id FROM items ORDER BY item_id DESC LIMIT 1";
@@ -30,7 +36,9 @@ if (isset($_POST['add'])) {
     $img = $rplc . $image;
     // additional logic needed for proper working
     $wh_id = $_POST['wh_name'];
+    $wh_id = escape($wh_id);
     $ws_id  = $_SESSION['ws_id'];
+    $ws_id = escape($ws_id);
     $query = "SELECT * FROM item_tracking WHERE fk_wh_id='$wh_id' AND fk_ws_id='$ws_id'";
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) != 0) {

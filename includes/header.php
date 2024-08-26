@@ -8,11 +8,12 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
   if (!$_SESSION['logged_in']) {
     header("Location: ./login.php");
   }
-}elseif (str_contains($uri, 'signup.php') || str_contains($uri, 'login.php')) {
-  if(isset($_SESSION['logged_in'])){
-  if ($_SESSION['logged_in']) {
-    header("Location: ./");
-  }}
+} elseif (str_contains($uri, 'signup.php') || str_contains($uri, 'login.php')) {
+  if (isset($_SESSION['logged_in'])) {
+    if ($_SESSION['logged_in']) {
+      header("Location: ./");
+    }
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -58,7 +59,7 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
 
   <div class="hero_area">
     <!-- header section strats -->
-    <header class="header_section"  style="position: fixed; width: 100%; z-index: 2;">
+    <header class="header_section" style="position: fixed; width: 100%; z-index: 2;">
       <div class="navbar1">
         <div class="container-fluid">
 
