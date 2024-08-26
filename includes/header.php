@@ -58,7 +58,7 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
 
   <div class="hero_area">
     <!-- header section strats -->
-    <header class="header_section">
+    <header class="header_section"  style="position: fixed; width: 100%; z-index: 2;">
       <div class="navbar1">
         <div class="container-fluid">
 
@@ -76,7 +76,7 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
             // if the url is not signup.php page then shoe nav links
             if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
             ?>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" style="background: red;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class=""> </span>
               </button>
 
@@ -91,12 +91,15 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
                   <li class="nav-item">
                     <a class="nav-link anton-regular" href="product.html">Products</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link anton-regular" href="product.html"> <i class="fa fa-user" aria-hidden="true"></i></a>
+                  </li>
                 </ul>
-                <div class="user_optio_box">
-                  <a href="">
+                <!-- <div class="user_optio_box">
+                  <a href=""> PRofile
                     <i class="fa fa-user" aria-hidden="true"></i>
                   </a>
-                </div>
+                </div> -->
               </div>
             <?php
               // closing the if statement (url page check)
