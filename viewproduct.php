@@ -74,7 +74,7 @@ require_once("includes/header.php");
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
-                        <h5>Full Name: Johnatan Smith</h5>
+                        <h5><span class="tooltip">Full Name:</h5>
                         <h5>Email: example@example.com</h5>
                         <h5>Phone: (097) 234-5678</h5>
                         <h5>Mobile: (098) 765-4321</h5>
