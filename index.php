@@ -25,11 +25,13 @@ require_once("includes/slider.php");
           <table class="table table-hover table-bordered">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">Category 
-                  <span class="tooltip">
-                  <i class="bi bi-question-circle"></i>
-                    <span class="tooltiptext">This is tooltip</span>
-                  </span>
+                <th scope="col">Category
+                <!-- <button type="button" class="btn" style="display: inline-block; color: red;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  ?
+</button> -->
+                  <!-- <span class="tooltip"> jddhjd?
+                    <span class="tooltiptext">This is more information!</span>
+                  </span> -->
                 </th>
                 <th scope="col">Brand</th>
                 <th scope="col">Price (pp)</th>
@@ -56,7 +58,7 @@ require_once("includes/slider.php");
                 $s = $row['item_sold'];
                 $i_p = $row['item_profit'];
                 $profit = $p * $s;
-                $pp = ($i_p/100)*$p;
+                $pp = ($i_p / 100) * $p;
                 $profit += $pp;
                 $t = $q * $p;
               ?>
