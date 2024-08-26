@@ -1,6 +1,20 @@
 <?php // requiring the init file
 require("includes/init.php");
 ?>
+<?php
+// checking session if the user is logged in
+$uri = "" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "";
+if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
+  if (!$_SESSION['logged_in']) {
+    header("Location: ./login.php");
+  }
+}elseif (str_contains($uri, 'signup.php') || str_contains($uri, 'login.php')) {
+  if(isset($_SESSION['logged_in'])){
+  if ($_SESSION['logged_in']) {
+    header("Location: ./");
+  }}
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -51,7 +65,8 @@ require("includes/init.php");
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="">
               <span>
-                <h1 class="anton-regular">Wire</h1>
+                Wire
+                <!-- <h1 class="anton-regulr">Wire</h1> -->
               </span>
             </a>
             <?php
@@ -59,7 +74,7 @@ require("includes/init.php");
             $uri = "" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "";
 
             // if the url is not signup.php page then shoe nav links
-            if (!str_contains($uri, 'signup.php')) {
+            if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
             ?>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class=""> </span>

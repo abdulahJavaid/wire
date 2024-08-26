@@ -8,63 +8,90 @@ require_once("includes/slider.php");
 <!-- Section for supplire/wholesaler to view listed items -->
 <section>
 
-<div class="padding-ws-index">
-  <div class="row">
-    <div class="col-auto">
-      <div id="h3-ws-index">
-        <h3 class="anton-regular">My listed items</h3>
+  <div class="padding-ws-index">
+    <div class="row">
+      <div class="col-auto">
+        <div id="h3-ws-index">
+          <h3 class="anton-regular">My listed items</h3>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="padding-ws-index">
-  <div class="row">
-    <div class="container-fluid">
-      <div class="col-auto">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Category</th>
-              <th scope="col">Brand</th>
-              <th scope="col">Price</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Sold</th>
-              <th scope="col">Total Cost</th>
-              <th scope="col">Agreement date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            // selecting all the listed items of this seller
-            $query = "SELECT * FROM items INNER JOIN item_tracking ON ";
-            $query .= "items.fk_item_tracking_id=item_tracking.item_tracking_id WHERE ";
-            $query .= "fk_ws_id='1'";
+  <div class="padding-ws-index">
+    <div class="row">
+      <div class="container-fluid">
+        <div class="col-auto">
+          <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Category 
+                  <span class="tooltip">
+                  <i class="bi bi-question-circle"></i>
+                    <span class="tooltiptext">This is tooltip</span>
+                  </span>
+                </th>
+                <th scope="col">Brand</th>
+                <th scope="col">Price (pp)</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Sold</th>
+                <th scope="col">Cost (unslod)</th>
+                <th scope="col">Earnings (sold)</th>
+                <th scope="col">Agreement expiry date</th>
+                <th scope="col">View</th>
+                <th scope="col">Add more quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              // selecting all the listed items of this seller
+              $query = "SELECT * FROM items INNER JOIN item_tracking ON ";
+              $query .= "items.fk_item_tracking_id=item_tracking.item_tracking_id WHERE ";
+              $query .= "fk_ws_id='1'";
 
-            $result = mysqli_query($conn, $query);
-            while($row = mysqli_fetch_assoc($result)){
-              $q = $row['item_quantity'];
-              $p = $row['item_price'];
-              $t = $q*$p;
-?>
-<tr>
-  <td><?php echo $row['item_category']; ?></td>
-  <td><?php echo $row['item_brand']; ?></td>
-  <td><?php echo $row['item_price']; ?></td>
-  <td><?php echo $row['item_quantity']; ?></td>
-  <td><?php echo $row['item_sold']; ?></td>
-  <td><?php echo $t; ?></td>
-  <td><?php echo $row['agreement_date']; ?></td>
-</tr>
+              $result = mysqli_query($conn, $query);
+              while ($row = mysqli_fetch_assoc($result)) {
+                $q = $row['item_quantity'];
+                $p = $row['item_price'];
+                $s = $row['item_sold'];
+                $i_p = $row['item_profit'];
+                $profit = $p * $s;
+                $pp = ($i_p/100)*$p;
+                $profit += $pp;
+                $t = $q * $p;
+              ?>
+                <tr>
+                  <td><?php echo $row['item_category']; ?></td>
+                  <td><?php echo $row['item_brand']; ?></td>
+                  <td>Rs. <?php echo $row['item_price']; ?></td>
+                  <td><?php echo $row['item_quantity']; ?></td>
+                  <td><?php echo $row['item_sold']; ?></td>
+                  <td>Rs. <?php echo $t; ?></td>
+                  <td>Rs. <?php echo $profit; ?></td>
+                  <td>
+                    <?php
+                    if ($row['agreement_date'] == '0000-00-00') {
+                      echo "<code>under review</code>";
+                    } else {
+                      echo $row['agreement_date'];
+                    }
+                    ?>
+                  </td>
+                  <td><button class="btn btn-sm btn-danger">View</button></td>
+                  <td><button class="btn btn-sm btn-danger">Add</button></td>
+                </tr>
 
-<?php
-// end of loop to show listed items
-            }
-            ?>
-          </tbody>
-        </table>
-        </div></div></div></div>
-        <!-- <div class="list-product">
+              <?php
+                // end of loop to show listed items
+              }
+              ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="list-product">
     <div class="container">
       <div class="product_heading">
         <h2>

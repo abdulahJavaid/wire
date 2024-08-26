@@ -39,34 +39,47 @@ if (isset($_FILES["ws_image"]) && isset($_POST["ws_name"]) && isset($_POST["ws_c
     // redirect("../school-profile.php?m=Sorry, your file was not uploaded.");
   } else {
     // if everything is ok, try to upload file
-    if($ws_password === $ws_repassword ) {
+    if ($ws_password === $ws_repassword) {
       $ws_password = md5($ws_password);
-    if (move_uploaded_file($_FILES["ws_image"]["tmp_name"], $target_file)) {
-      // Image uploaded successfully, now insert form data into the database
+      if (move_uploaded_file($_FILES["ws_image"]["tmp_name"], $target_file)) {
+        // Image uploaded successfully, now insert form data into the database
 
+        // renaming the image with the id of the user
+        $query = "SELECT ws_id FROM wholesaler ORDER BY ws_id DESC LIMIT 1";
+        $result = mysqli_query($conn, $query);
+        if (mysqli_num_rows($result) != 0) {
+          $row = mysqli_fetch_assoc($result);
+          $rplc = $row['ws_id'];
+          $rplc += 1;
+          $rplc = (string) $rplc;
+        } else {
+          $rplc = '1';
+        }
+        rename("./uploads/ws-profile/" . $ws_image . "", "./uploads/ws-profile/" . $rplc . $ws_image . "");
 
-
-      // Insert form data and image path into the database
-      $query = "INSERT INTO wholesaler (ws_image, ws_name, ws_company_name, ws_home_address, ws_office_address, ws_personal_contact, ws_office_contact, 	ws_cnic, ws_email, ws_password) 
+        $ws_image = $rplc . $ws_image;
+        // Insert form data and image path into the database
+        $query = "INSERT INTO wholesaler (ws_image, ws_name, ws_company_name, ws_home_address, ws_office_address, ws_personal_contact, ws_office_contact, 	ws_cnic, ws_email, ws_password) 
               VALUES ('$ws_image', '$ws_name', '$ws_company_name', '$ws_home_address', '$ws_office_address', '$ws_personal_contact', '$ws_office_contact', '$ws_cnic', '$ws_email', '$ws_password')";
-      $result = mysqli_query($conn, $query);
-      if ($result) {
-        echo "Data has been successfully inserted.";
-        // redirect("../school-profile.php?m=Data has been successfully inserted.");
+        $result = mysqli_query($conn, $query);
+        if ($result) {
+          // echo "Data has been successfully inserted.";
+          header("Location: ./login.php");
+          // redirect("../school-profile.php?m=Data has been successfully inserted.");
+        } else {
+          header("Location: ./signup.php?m=Error: " . mysqli_error($conn));
+          echo "Error: " . mysqli_error($conn);
+        }
       } else {
-        header("Location: ./signup.php?m=Error: " . mysqli_error($conn));
-        echo "Error: " . mysqli_error($conn);
+        header("Location: ./signup.php?m=Sorry, there was an error uploading your file.");
       }
     } else {
-      header("Location: ./signup.php?m=Sorry, there was an error uploading your file.");
+      header("Location: ./signup.php?m=Your password does not match");
     }
-  } else {
-    header("Location: ./signup.php?m=Your password does not match");
-  }
   }
 }
 
-if(isset($_GET['m'])){
+if (isset($_GET['m'])) {
   echo $_GET['m'];
 }
 
@@ -87,10 +100,6 @@ if(isset($_GET['m'])){
             <div class="col-xl-6">
               <div class="card-body p-md-2 text-black">
                 <h3 class="mb-5 text-uppercase">Supplier Registration</h3>
-
-
-
-
 
                 <form action="" method="POST" enctype="multipart/form-data">
 
@@ -146,7 +155,6 @@ if(isset($_GET['m'])){
                     </div>
                   </div>
 
-
                   <div data-mdb-input-init class="form-outline mb-2">
                     <input type="text" id="cnic" name="ws_cnic" placeholder="XXXXX-XXXXXXX-X"
                       pattern="\d{5}-\d{7}-\d{1}" maxlength="15" class="form-control form-control-sm" required />
@@ -158,11 +166,6 @@ if(isset($_GET['m'])){
                     <label class="form-label" for="form3Example99">Email Address</label>
                   </div>
 
-
-
-
-
-
                   <div data-mdb-input-init class="form-outline mb-2">
                     <input type="password" id="form3Example97" name="ws_password" class="form-control form-control-sm" placeholder="Enter your password" required />
                     <label class="form-label" for="form3Example97">Password</label>
@@ -173,12 +176,10 @@ if(isset($_GET['m'])){
                     <label class="form-label" for="form3Example98">Re-enter Password</label>
                   </div>
 
-
                   <div class="d-flex justify-content-end pt-2">
                     <button type="reset" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-sm" style="margin-right: 8px;">Reset</button>
                     <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-sm">Submit</button>
                   </div>
-
 
                 </form>
                 <!-- Form ends here -->

@@ -1,14 +1,14 @@
 <?php
-include "./connection/configs.php";
-include "./connection/connection.php";
+// header
+require_once("includes/header.php");
+
 ?>
 <?php
-session_start();
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $ws_email = $_POST["ws_email"];
-    $ws_password = $_POST["ws_password"];
+    $ws_password = md5($_POST["ws_password"]);
 
     // Query to retrieve user from signup table
     $sql = "SELECT * FROM wholesaler WHERE ws_email = '$ws_email' AND ws_password = '$ws_password'";
@@ -16,8 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_num_rows($result) == 1) {
         // Set session variables
-        $_SESSION["loggedin"] = true;
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION["logged_in"] = true;
         $_SESSION["email"] = $ws_email;
+        $_SESSION["ws_id"] = $row['ws_id'];
 
         // Redirect to dashboard or any other secure page
         header("Location: ./index.php");
@@ -29,57 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <link rel="icon" href="images/fevicon/fevicon.png" type="image/gif" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>HandTime</title>
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-
-  <!-- bs -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
-</head>
-
-<body>
- <div class="hero_area">
-    <!-- header section starts -->
-    <header class="header_section">
-      <div class="navbar1">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="index.html">
-              <span>HandTime</span>
-            </a>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <!-- end header section -->
 
     <section class="h-100 bg-light">
       <div class="container py-5 h-100">
