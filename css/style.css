@@ -1079,3 +1079,74 @@ Custom Code for CSS Codesmine
     margin-right: 15px;
     margin-bottom: 8%;
 }
+
+
+
+
+/* temlate code for view product */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #343a40;
+    color: #fff;
+}
+.profile-header {
+    background: linear-gradient(135deg, #6c757d, #343a40);
+    padding: 20px;
+    border-bottom: 1px solid #4e4e4e;
+}
+.profile-header img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.profile-header h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.btn-follow, .btn-message {
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+.btn-follow:hover {
+    background-color: #0056b3;
+}
+.btn-message:hover {
+    background-color: #e0e0e0;
+    color: #343a40;
+}
+.social-links a {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.social-links a:hover {
+    color: #007bff;
+}
+.project-status {
+    background-color: #3c3f43;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+.project-status:hover {
+    transform: scale(1.05);
+}
+.project-status h6 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #ccc;
+}
+.progress-bar {
+    background-color: #007bff;
+}
+/* end template css code */
