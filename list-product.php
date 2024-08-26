@@ -1,170 +1,151 @@
 <?php // requiring the header of page
 require_once("includes/header.php");
 ?>
+<!DOCTYPE html>
+<html>
 
-<?php
-// adding data for the entered item
-if (isset($_POST['add'])) {
-    $category = $_POST['item_category'];
-    $brand = $_POST['item_brand'];
-    $price = $_POST['item_price'];
-    $quantity = $_POST['item_quantity'];
-    $description = $_POST['item_description'];
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    $tmp = $_FILES['item_image']['tmp_name'];
-    $image = $_FILES['item_image']['name'];
-    move_uploaded_file($tmp, __DIR__ . "/uploads/item-images/" . $image);
+  <title>HandTime</title>
 
-    $query = "SELECT item_id FROM items ORDER BY item_id DESC LIMIT 1";
-    $result = mysqli_query($conn, $query);
-    if (mysqli_num_rows($result) != 0) {
-        $row = mysqli_fetch_assoc($result);
-        $rplc = $row['item_id'];
-        $rplc += 1;
-        $rplc = (string) $rplc;
-    } else {
-        $rplc = '1';
-    }
-    rename("./uploads/item-images/" . $image ."", "./uploads/item-images/" . $rplc . $image ."" );
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
-    $img = $rplc . $image;
-    // additional logic needed for proper working
-    // $query = "SELECT * FROM item_tracking WHERE item";
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-    $query = "INSERT INTO items(item_category, item_brand, item_image, item_description, item_quantity, ";
-    $query .= " item_price, item_sold, fk_item_tracking_id) VALUES('$category', '$brand', '$img', '$description', ";
-    $query .= "'$quantity', '$price', '0', '1')";
+  <!-- bs -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
 
-    $result = mysqli_query($conn, $query);
-}
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
 
-?>
+</head>
 
-<!-- Section for supplire/wholesaler to list new items -->
+<body> <!-- Moved the opening <body> tag here -->
+
+<!-- Section for supplier/wholesaler to list new items -->
 <section>
 
     <div class="padding-ws-index">
         <div class="row">
             <div class="col-auto">
                 <div id="h2-ws-index">
-                    <h2 class="anton-regular">List a Product</h2>
+                    <h2 class="anton-regular">View Product</h2>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="padding-ws-index">
-    <div class="col-auto offset-md-1">
-        <div class="row justify-content-start">
-            <div class="card border-dark mb-3" style="background-color: white; max-width: 600px; width: 100%;">
-                <div class="card-header text-white" style="background-color: #343a40; color: white;"><strong>Add Details</strong></div>
-                <div class="card-body text-dark">
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <div class="row mb-3">
-                        <label for="item_category" class="form-label"><u>Warehouse</u></label>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card profile-header text-center">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" alt="John Smith">
+                    <h3>John Smith</h3>
+                    <p>Full Stack Developer</p>
+                    <p>Bay Area, San Francisco, CA</p>
+                    <button class="btn btn-primary btn-follow">Follow</button>
+                    <button class="btn btn-outline-light btn-message">Message</button>
+                </div>
+                <div class="card mt-3 social-links">
+                    <a href="#" class="text-center"><i class="fas fa-globe"></i> https://mdbootstrap.com</a>
+                    <a href="#" class="text-center"><i class="fab fa-github"></i> mdbootstrap</a>
+                    <a href="#" class="text-center"><i class="fab fa-twitter"></i> @mdbootstrap</a>
+                    <a href="#" class="text-center"><i class="fab fa-instagram"></i> mdbootstrap</a>
+                    <a href="#" class="text-center"><i class="fab fa-facebook"></i> mdbootstrap</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Full Name: Johnatan Smith</h5>
+                        <h5>Email: example@example.com</h5>
+                        <h5>Phone: (097) 234-5678</h5>
+                        <h5>Mobile: (098) 765-4321</h5>
+                        <h5>Address: Bay Area, San Francisco, CA</h5>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="project-status">
+                            <h6>Assignment: Project Status</h6>
+                            <p>Web Design</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 80%;">80%</div>
+                            </div>
+                            <p>Website Markup</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 72%;">72%</div>
+                            </div>
+                            <p>One Page</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 89%;">89%</div>
+                            </div>
+                            <p>Mobile Template</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 55%;">55%</div>
+                            </div>
+                            <p>Backend API</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 66%;">66%</div>
+                            </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="item_category" class="form-label"><u>Category</u></label>
-                                <select name="item_category" class="form-select form-select-lg" required>
-                                    <option value="">Select category</option>
-                                    <?php
-                                    // select all categories from the database
-                                    $query = "SELECT * FROM category";
-                                    $result = mysqli_query($conn, $query);
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                    ?>
-                                        <option value="<?php echo $row['category_name']; ?>"><?php echo $row['category_name']; ?></option>
-                                    <?php
-                                    }
-                                    ?>
-                                </select>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="project-status">
+                            <h6>Assignment: Project Status</h6>
+                            <p>Web Design</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 80%;">80%</div>
                             </div>
-                            <div class="col-md-6">
-                                <label for="item_brand" class="form-label"><u>Brand</u></label>
-                                <select name="item_brand" class="form-select form-select-lg" required>
-                                    <option value="">Select Brand</option>
-                                    <?php
-                                    // select all categories from the database
-                                    $query = "SELECT * FROM brand";
-                                    $result = mysqli_query($conn, $query);
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                    ?>
-                                        <option value="<?php echo $row['brand_name']; ?>"><?php echo $row['brand_name']; ?></option>
-                                    <?php
-                                    }
-                                    ?>
-                                </select>
+                            <p>Website Markup</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 72%;">72%</div>
+                            </div>
+                            <p>One Page</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 89%;">89%</div>
+                            </div>
+                            <p>Mobile Template</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 55%;">55%</div>
+                            </div>
+                            <p>Backend API</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 66%;">66%</div>
                             </div>
                         </div>
-
-                        <!-- File Input Section with Image Placeholder -->
-                        <!-- <div class="mb-3">
-                            <label for="item_image" class="form-label"><u>Image</u></label>
-                            <div class="text-center">
-                                <img id="imagePreview" src="https://via.placeholder.com/100" alt="Image Preview" class="rounded mb-2" style="max-width: 100px;">
-                            </div>
-                            <div class="input-group justify-content-center">
-                                <input type="file" name="item_image" class="form-control d-none" id="fileInput" required onchange="previewImage(event)">
-                                <button class="btn btn-secondary" type="button" id="uploadButton">
-                                    <i class="bi bi-upload"></i>
-                                </button>&nbsp;
-                                <button class="btn btn-danger" type="button" id="deleteButton">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </div>
-                        </div> -->
-                        <!-- <div class="mb-3">
-                            <label for="item_image" class="form-label"><u>Image</u></label>
-                            <div class="input-group align-items-center">
-                                <input type="file" name="item_image" class="form-control d-none" id="fileInput" required onchange="previewImage(event)">
-                                <button class="btn btn-secondary" type="button" id="uploadButton">
-                                    <i class="bi bi-upload"></i>
-                                </button>&nbsp;
-                                <button class="btn btn-danger" type="button" id="deleteButton">
-                                    <i class="bi bi-trash"></i>
-                                </button>&nbsp;
-                                <img id="imagePreview" src="https://via.placeholder.com/100" alt="Image Preview" class="rounded ms-2" style="max-width: 100px;">
-                            </div>
-                        </div> -->
-                        <div class="mb-3">
-                            <label for="item_image" class="form-label"><u>Image</u></label>
-                            <div class="input-group">
-                                <input type="file" name="item_image" class="form-control d-none" id="fileInput" required onchange="previewImage(event)">
-                                <button class="btn btn-secondary" type="button" id="uploadButton">
-                                    <i class="bi bi-upload"></i>
-                                </button>&nbsp;
-                                <button class="btn btn-danger" type="button" id="deleteButton">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </div>
-                            <div class="mt-3 text-center">
-                                <img id="imagePreview" src="https://via.placeholder.com/100" alt="Image Preview" class="rounded" style="max-width: 150px;">
-                            </div>
-                        </div> 
-
-                        <div class="mb-3">
-                            <label for="item_price" class="form-label"><u>Price</u></label>
-                            <input type="text" name="item_price" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="item_quantity" class="form-label"><u>Quantity</u></label>
-                            <input type="text" name="item_quantity" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="item_description" class="form-label"><u>Description</u></label>
-                            <textarea name="item_description" class="form-control" id="" required></textarea>
-                        </div>
-                        <button type="submit" name="add" class="btn btn-sm btn-dark">Submit</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 </section>
 
 <?php // requiring the footer of page
 require_once("includes/footer.php");
 ?>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
