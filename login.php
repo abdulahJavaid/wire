@@ -10,6 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ws_email = $_POST["ws_email"];
     $ws_password = md5($_POST["ws_password"]);
 
+    $ws_email = escape($ws_email);
+    $ws_password = escape($ws_password);
+
     // Query to retrieve user from signup table
     $sql = "SELECT * FROM wholesaler WHERE ws_email = '$ws_email' AND ws_password = '$ws_password'";
     $result = mysqli_query($conn, $sql);
