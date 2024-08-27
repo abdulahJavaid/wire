@@ -91,7 +91,7 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
                     </div>
                     <div class="navbar-nav w-100">
                         <a href="../index" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                        <a href="../new-listings" class="nav-item nav-link"><i class="fa fa-list-alt me-2"></i>New Listed Items</a>
+                        <a href="../new-listings" class="nav-item nav-link"><i class="fa fa-list-alt me-2"></i>New Listings</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                             <div class="dropdown-menu bg-transparent border-0">

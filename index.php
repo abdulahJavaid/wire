@@ -22,7 +22,7 @@ require_once("includes/slider.php");
     <div class="row">
       <div class="container-fluid">
         <div class="col-auto">
-          <table class="table table-hover table-bordered table-responsive">
+          <table class="table table-hover table-bordered">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Category
