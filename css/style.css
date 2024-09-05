@@ -1,3 +1,7 @@
+/***************** 
+Custom template css
+*******************/
+
 body {
   font-family: "Roboto", sans-serif;
   color: #0c0c0c;
@@ -953,27 +957,39 @@ a:focus {
 }
 /*# sourceMappingURL=style.css.map */
 
+
+
+
+
+
 /* ***********
-Custom Code for CSS Codesmine
+Custom Code for CSS - Codesmine
 ************ */
 
 /* navbar styling strat */
 
+body > div > section.h-100.bg-light > div > div > div {
+  margin-top: 3.5rem;
+}
+
+.project-heading {
+  color: #EB1616;
+  font-weight: bold !important;
+}
+
+/* .info_section {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+} */
+
 .navbar1 {
   background-color: #000000;
-  color: white;
+  color: #EB1616;
 }
 
 /* color black for backgorund */
 .color_black {
   background: black;
-}
-
-.info_section {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 /* signup from css */

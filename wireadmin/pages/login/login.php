@@ -22,6 +22,8 @@ if (isset($_POST['login'])) {
         $_SESSION['admin_name'] = $row['admin_name'];
         $_SESSION['admin_id'] = $row['admin_id'];
         $_SESSION['admin_email'] = $row['admin_email'];
+        $_SESSION['wh_id'] = $row['fk_wh_id'];
+        $_SESSION['admin_role'] = $row['admin_role'];
         redirect("../index");
     } else {
         redirect("./login.php?m=Your email and password does not match!");

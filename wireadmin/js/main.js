@@ -1,3 +1,16 @@
+// Start custom code
+
+// function newListings(value, value1) {
+//     // Insert the passed value into an element inside the modal
+//     document.getElementById('img_'+value).innerText = value1;
+    
+//     // Display the modal
+//     document.getElementById('modal').style.display = 'block';
+// }
+
+// End of custom code
+
+// the code for template
 (function ($) {
     "use strict";
 

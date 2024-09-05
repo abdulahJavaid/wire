@@ -47,9 +47,10 @@ require_once("includes/slider.php");
             <tbody>
               <?php
               // selecting all the listed items of this seller
+              $id = $_SESSION['ws_id'];
               $query = "SELECT * FROM items INNER JOIN item_tracking ON ";
               $query .= "items.fk_item_tracking_id=item_tracking.item_tracking_id WHERE ";
-              $query .= "fk_ws_id='1'";
+              $query .= "fk_ws_id='$id'";
 
               $result = mysqli_query($conn, $query);
               while ($row = mysqli_fetch_assoc($result)) {

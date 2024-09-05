@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="card card-registration bg-dark my-4">
               <div class="row g-0">
                 <div class="col-xl-6 d-none d-xl-block">
-                  <img src="images/banner.jpeg" alt="Sample photo" class="img-fluid"
+                  <img src="images/2151039322.jpg" alt="Sample photo" class="img-fluid"
                     style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
                 </div>
                 <div class="col-xl-6">

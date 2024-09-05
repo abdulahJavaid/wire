@@ -65,10 +65,10 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
 
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="">
-              <span>
-                Wire
+              <!-- <span> -->
+                <h5 class="project-heading">Phone Mate</h5>
                 <!-- <h1 class="anton-regulr">Wire</h1> -->
-              </span>
+              <!-- </span> -->
             </a>
             <?php
             // getting the url of the page

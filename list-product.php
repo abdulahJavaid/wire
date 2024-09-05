@@ -15,6 +15,7 @@ if (isset($_POST['add'])) {
     $quantity = escape($quantity);
     $description = $_POST['item_description'];
     $description = escape($description);
+    $item_number = escape($_POST['item_number']);
 
     $tmp = $_FILES['item_image']['tmp_name'];
     $image = $_FILES['item_image']['name'];
@@ -54,8 +55,8 @@ if (isset($_POST['add'])) {
     }
 
     $query = "INSERT INTO items(item_category, item_brand, item_image, item_description, item_quantity, ";
-    $query .= " item_price, item_sold, fk_item_tracking_id) VALUES('$category', '$brand', '$img', '$description', ";
-    $query .= "'$quantity', '$price', '0', '$tracking_id')";
+    $query .= " item_price, item_sold, fk_item_tracking_id, item_number) VALUES('$category', '$brand', '$img', '$description', ";
+    $query .= "'$quantity', '$price', '0', '$tracking_id', '$item_number')";
 
     $result = mysqli_query($conn, $query);
 }
@@ -138,7 +139,7 @@ if (isset($_POST['add'])) {
                             <div class="mb-3">
                                 <label for="item_image" class="form-label"><strong><u>Image</u></strong></label>
                                 <div class="text-center">
-                                    <img id="imagePreview" src="https://via.placeholder.com/100" alt="Image Preview" class="rounded mb-2" style="max-width: 100px;">
+                                    <img id="imagePreview" src="https://via.placeholder.com/200" alt="Image Preview" class="rounded mb-2" style="max-width: 200px;">
                                 </div>
                                 <div class="input-group justify-content-center">
                                     <input type="file" name="item_image" class="form-control d-none" id="fileInput" required onchange="previewImage(event)">
@@ -180,12 +181,16 @@ if (isset($_POST['add'])) {
                         </div>  -->
 
                             <div class="mb-3">
-                                <label for="item_price" class="form-label"><strong><u>Price</u><code> (per peice)</code></strong></label>
-                                <input type="text" name="item_price" class="form-control" style="width: auto; max-width: 400px;" placeholder="Rs." required>
+                                <label for="item_number" class="form-label"><strong><u>Item Number</u></strong></label>
+                                <input type="text" name="item_number" class="form-control" style="width: auto; max-width: 400px;" placeholder="eg. y8 pro" required>
                             </div>
                             <div class="mb-3">
                                 <label for="item_quantity" class="form-label"><strong><u>Quantity</u></strong></label>
                                 <input type="text" name="item_quantity" class="form-control" style="width: auto; max-width: 400px;" placeholder="amount" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="item_price" class="form-label"><strong><u>Price</u><code> (per peice)</code></strong></label>
+                                <input type="text" name="item_price" class="form-control" style="width: auto; max-width: 400px;" placeholder="Rs." required>
                             </div>
                             <div class="mb-3">
                                 <label for="item_description" class="form-label"><strong><u>Description</u></strong></label>
