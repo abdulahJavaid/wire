@@ -57,7 +57,7 @@ if (isset($_POST['login'])) {
                     ?>
                         <div class="col-sm-12">
                             <div class="bg-secondary rounded h-100 p-0">
-                                <!-- <h6 class="mb-4">Icons & Dismissing Alerts</h6> -->
+                                <!-- <h6 class="mb-4">Icons & Dismissing Alerts</h6>  -->
                                 <div class="alert alert-light alert-dismissible fade show" role="alert">
                                     <i class="fa fa-exclamation-circle me-2"></i>
 
