@@ -63,10 +63,26 @@ require_once("../../includes/nav-side.php");
                                         </form>
                                     </td>
                                 </tr>
-                        <?php
+                            <?php
                                 // end of the loop to fetch data
                             }
                             // end of if statement if the returned result is > 0
+                        } else {
+                            // show the message if no records
+                            ?>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="row text-center">
+                                        <div class="col-md-6 offset-md-3">
+                                            <div class="alert alert-success"><strong>
+                                                    No new items for approval <?php echo $_SESSION['admin_name']; ?>, enjoy your day! &#x1F603;
+                                                </strong></div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php
+                            // end of else to show empty table message
                         }
                         ?>
                     </tbody>

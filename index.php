@@ -25,55 +25,65 @@ require_once("includes/slider.php");
           <table class="table table-hover table-bordered">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">Category
-                <!-- <button type="button" class="btn" style="display: inline-block; color: red;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  ?
-</button> -->
-                  <!-- <span class="tooltip"> jddhjd?
-                    <span class="tooltiptext">This is more information!</span>
-                  </span> -->
-                </th>
                 <th scope="col">Brand</th>
-                <th scope="col">Price (pp)</th>
+                <th scope="col">Category</th>
+                <th scope="col">Item Number</th>
                 <th scope="col">Quantity</th>
-                <th scope="col">Sold</th>
-                <th scope="col">Cost (unslod)</th>
-                <th scope="col">Earnings (sold)</th>
-                <th scope="col">Agreement expiry date</th>
-                <th scope="col">Add more quantity</th>
-                <th scope="col">View</th>
+                <th scope="col">Price (pp)</th>
+                <th scope="col">Profit (pp)</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Agreement date</th>
+                <th scope="col">More quantity</th>
+                <th scope="col">Details</th>
               </tr>
             </thead>
             <tbody>
               <?php
               // selecting all the listed items of this seller
-              $id = $_SESSION['ws_id'];
+              $id = escape($_SESSION['ws_id']);
               $query = "SELECT * FROM items INNER JOIN item_tracking ON ";
               $query .= "items.fk_item_tracking_id=item_tracking.item_tracking_id WHERE ";
-              $query .= "fk_ws_id='$id'";
+              $query .= "fk_ws_id='$id' AND NOT item_status='rejected'";
 
               $result = mysqli_query($conn, $query);
+
+              if (mysqli_num_rows($result) == 0) {
+                // code to show if the table is empty
+              ?>
+              <tr>
+                <td colspan="10">
+                <div class="row text-center">
+                  <div class="col-md-6 offset-md-3">
+                    <div class="alert alert-primary"><strong>
+                        Getting started? We are here to help you, list your first item <a href="./list-product.php">here</a> &#x1F448;
+                      </strong></div>
+                  </div>
+                </div>
+                </td>
+              </tr>
+              <?php
+              } else { // if there is sell record
+                             
+              // to fetch sell records of the listed items
               while ($row = mysqli_fetch_assoc($result)) {
-                $q = $row['item_quantity'];
-                $p = $row['item_price'];
-                $s = $row['item_sold'];
-                $i_p = $row['item_profit'];
-                $profit = $p * $s;
-                $pp = ($i_p / 100) * $p;
-                $profit += $pp;
-                $t = $q * $p;
+                $quantity = $row['item_quantity']; // quantity
+                $price = $row['item_price']; // price
+                $total = $quantity * $price; // total amount for unsold quantity
+
+                $profit = $row['item_profit']; // profit per piece
+                $profit_rs = ($profit / 100) * $price; // profit in rupees
               ?>
                 <tr>
-                  <td><?php echo $row['item_category']; ?></td>
                   <td><?php echo $row['item_brand']; ?></td>
-                  <td>Rs. <?php echo $row['item_price']; ?></td>
+                  <td><?php echo $row['item_category']; ?></td>
+                  <td><?php echo $row['item_number']; ?></td>
                   <td><?php echo $row['item_quantity']; ?></td>
-                  <td><?php echo $row['item_sold']; ?></td>
-                  <td>Rs. <?php echo $t; ?></td>
-                  <td>Rs. <?php echo $profit; ?></td>
+                  <td>Rs.<?php echo $row['item_price']; ?></td>
+                  <td>Rs.<?php echo $profit_rs; ?> (<?php echo $row['item_profit']; ?>%)</td>
+                  <td>Rs.<?php echo $total; ?></td>
                   <td>
                     <?php
-                    if ($row['agreement_date'] == '0000-00-00') {
+                    if ($row['item_status'] == 'review') {
                       echo "<code>under review</code>";
                     } else {
                       echo $row['agreement_date'];
@@ -87,6 +97,8 @@ require_once("includes/slider.php");
               <?php
                 // end of loop to show listed items
               }
+               // end of else {if there is record}
+            }
               ?>
             </tbody>
           </table>
@@ -94,362 +106,194 @@ require_once("includes/slider.php");
       </div>
     </div>
   </div>
-  <!-- <div class="list-product">
-    <div class="container">
-      <div class="product_heading">
-        <h2>
-          Top Sale accorries
-        </h2>
-      </div>
-      <div class="product_container">
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="images/1.webp" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="images/2.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="images/3.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div> -->
 </section>
+<!-- End section to view listed items -->
 
-<!-- end product section -->
+<!-- Section for supplire/wholesaler to view sold items -->
+<section>
 
-
-<!-- product section -->
-<!-- 
-  <section class="product_section ">
-    <div class="container">
-      <div class="product_heading">
-        <h2>
-          Feature Watches
-        </h2>
-      </div>
-      <div class="product_container">
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="images/4.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="images/5.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="images/6.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
+  <div class="padding-ws-index">
+    <div class="row">
+      <div class="col-auto">
+        <div id="h3-ws-index">
+          <h3 class="anton-regular">Sold Items</h3>
         </div>
       </div>
     </div>
-  </section> -->
+  </div>
 
+  <div class="padding-ws-index">
+    <div class="row">
+      <div class="container-fluid">
+        <div class="col-auto">
+          <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Brand</th>
+                <th scope="col">Category</th>
+                <th scope="col">Item Number</th>
+                <th scope="col">Items Sold</th>
+                <th scope="col">Date</th>
+                <th scope="col">Price (pp)</th>
+                <th scope="col">Profit (pp)</th>
+                <th scope="col">Earnings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              // selecting all the sold items of this seller
+              $id = escape($_SESSION['ws_id']);
+              $query = "SELECT * FROM items_sold INNER JOIN items ON ";
+              $query .= "items_sold.fk_item_id=items.item_id INNER JOIN item_tracking ";
+              $query .= "ON items.fk_item_tracking_id=item_tracking.item_tracking_id WHERE ";
+              $query .= "fk_ws_id='$id' AND item_status='approved'";
 
-<!-- end product section -->
-
-
-<!-- product section -->
-<!-- 
-  <section class="product_section ">
-    <div class="container">
-      <div class="product_heading">
-        <h2>
-          New Arrivals
-        </h2>
-      </div>
-      <div class="product_container">
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="images/7.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
+              $result = mysqli_query($conn, $query);
+              if (mysqli_num_rows($result) == 0) {
+                // code to show if the table is empty
+              ?>
+              <tr>
+                <td colspan="8">
+                <div class="row text-center">
+                  <div class="col-md-6 offset-md-3">
+                    <div class="alert alert-primary"><strong>
+                        No items sold yet! Do not worry, we are here for you &#x1F4AA;
+                      </strong></div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="images/8.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="box-content">
-            <div class="img-box">
-              <img src="images/10.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <div class="text">
-                <h6>
-                  Men's Watch
-                </h6>
-                <h5>
-                  <span>$</span> 300
-                </h5>
-              </div>
-              <div class="like">
-                <h6>
-                  Like
-                </h6>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="">
-              Add To Cart
-            </a>
-          </div>
+                </td>
+              </tr>
+              <?php
+              } else { // if there is sell record
+                
+              // to fetch sell records of the sold items
+              $show_total = 0;
+              while ($row = mysqli_fetch_assoc($result)) {
+                $quantity = $row['sell_quantity']; // quantity
+                $price = $row['item_price']; // price
+                $total = $quantity * $price; // total amount for unsold quantity
+
+                $profit = $row['item_profit']; // profit per piece
+                $profit_rs = ($profit / 100) * $price; // profit in rupees per piece
+
+                $total_profit_rs = $profit_rs * $quantity; // total profit on items sold
+                $total += $total_profit_rs; // total payment
+
+              ?>
+                <tr>
+                  <td><?php echo $row['item_brand']; ?></td>
+                  <td><?php echo $row['item_category']; ?></td>
+                  <td><?php echo $row['item_number']; ?></td>
+                  <td><?php echo $row['sell_quantity']; ?></td>
+                  <td><?php echo $row['sell_date']; ?></td>
+                  <td>Rs.<?php echo $row['item_price']; ?></td>
+                  <td>Rs.<?php echo $profit_rs; ?> (<?php echo $row['item_profit']; ?>%)</td>
+                  <td>Rs.<?php echo $total; ?></td>
+                </tr>
+
+              <?php
+                // total earnings of the seller
+                $show_total += $total;
+                // end of loop to show listed items
+              }
+              ?>
+              <!-- total payable to the seller -->
+              <tr>
+                <td colspan="7"><strong>Total</strong></td>
+                <td>Rs.<?php echo $show_total; ?></td>
+              </tr>
+              <!-- end total payable to the seller -->
+               <?php
+               // end of else statement{if there is the reocord}
+            }
+               ?>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-  </section> -->
+  </div>
+</section>
+<!-- end section to view sold items -->
 
+<!-- Section for supplire/wholesaler to view rejected items -->
+<section>
 
-<!-- end product section -->
+  <div class="padding-ws-index">
+    <div class="row">
+      <div class="col-auto">
+        <div id="h3-ws-index">
+          <h3 class="anton-regular">Rejected Items</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="padding-ws-index">
+    <div class="row">
+      <div class="container-fluid">
+        <div class="col-auto">
+          <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Brand</th>
+                <th scope="col">Category</th>
+                <th scope="col">Item Number</th>
+                <th scope="col">Rejection Reason</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              // selecting all the rejected items of this seller
+              $id = escape($_SESSION['ws_id']);
+              $query = "SELECT * FROM items INNER JOIN item_rejection ON ";
+              $query .= "items.item_id=item_rejection.fk_item_id INNER JOIN item_tracking ";
+              $query .= "ON items.fk_item_tracking_id=item_tracking.item_tracking_id WHERE ";
+              $query .= "fk_ws_id='$id' AND item_status='rejected'";
+
+              $result = mysqli_query($conn, $query);
+              if (mysqli_num_rows($result) == 0) {
+                // code to show if the table is empty
+              ?>
+              <tr>
+                <td colspan="8">
+                <div class="row text-center">
+                  <div class="col-md-6 offset-md-3">
+                    <div class="alert alert-primary"><strong>
+                        Great! you are on a roll, no rejections &#x1F920;
+                      </strong></div>
+                  </div>
+                </div>
+                </td>
+              </tr>
+              <?php
+              } else { // if there is sell record
+                
+              // to fetch sell records of the rejected items
+              while ($row = mysqli_fetch_assoc($result)) {
+              ?>
+                <tr>
+                  <td><?php echo $row['item_brand']; ?></td>
+                  <td><?php echo $row['item_category']; ?></td>
+                  <td><?php echo $row['item_number']; ?></td>
+                  <td><?php echo $row['rejection_reason']; ?></td>
+
+              <?php
+                // end of loop to show listed items
+              }
+              ?>
+               <?php
+               // end of else statement{if there is the reocord}
+            }
+               ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end section to view rejected items -->
 
 <!-- contact section -->
 <!-- <section class="contact_section layout_padding">
