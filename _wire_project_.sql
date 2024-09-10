@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2024 at 11:18 AM
+-- Generation Time: Sep 10, 2024 at 03:27 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -149,7 +149,7 @@ CREATE TABLE `business_developer` (
   `bd_image` varchar(255) NOT NULL,
   `bd_email` varchar(255) NOT NULL,
   `bd_password` varchar(255) NOT NULL,
-  `bd_status` varchar(50) NOT NULL,
+  `bd_status` varchar(50) NOT NULL DEFAULT 'active',
   `bd_referal_code` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -168,7 +168,7 @@ CREATE TABLE `buyer` (
   `buyer_image` varchar(255) NOT NULL,
   `buyer_email` varchar(255) NOT NULL,
   `buyer_password` varchar(255) NOT NULL,
-  `buyer_status` varchar(50) NOT NULL,
+  `buyer_status` varchar(50) NOT NULL DEFAULT 'active',
   `fk_bd_id` int(11) NOT NULL,
   `fk_rider_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -267,13 +267,13 @@ CREATE TABLE `items` (
 INSERT INTO `items` (`item_id`, `item_category`, `item_brand`, `item_number`, `item_description`, `item_image`, `item_price`, `item_quantity`, `more_quantity`, `item_sold`, `agreement_date`, `item_profit`, `item_status`, `fk_item_tracking_id`) VALUES
 (4, 'Charger', 'Samsung', '', 'This is a good handfree', '1Screenshot (8).png', 30, 1200, 0, 0, '2025-01-03', 20, 'approved', 1),
 (5, 'Charger', 'Samsung', '', 'A good quality charger', '4Screenshot (4).png', 200, 455, 0, 0, '2024-10-28', 5, 'approved', 1),
-(6, 'Handfree', 'Hogo', '', 'This is a good quality handfree', '5Screenshot (1).png', 344, 700, 0, 0, '0000-00-00', 0, 'approved', 1),
-(7, 'Data Cable', 'Apple', '', 'Data cable', '7Screenshot (9).png', 100, 200, 0, 0, '0000-00-00', 0, 'approved', 1),
+(6, 'Handfree', 'Hogo', '', 'This is a good quality handfree', '5Screenshot (1).png', 344, 700, 0, 0, '2024-10-12', 10, 'approved', 1),
+(7, 'Data Cable', 'Apple', '', 'Data cable', '7Screenshot (9).png', 100, 200, 0, 0, '0000-00-00', 0, 'rejected', 1),
 (10, 'Charger', 'Hogo', '', 'This is a very good charger', '8download (2).jpg', 230, 300, 0, 0, '2024-09-18', 10, 'approved', 4),
 (11, 'USB', 'Samsung', '', 'A good quality usb', '11image-1.jpg', 200, 200, 0, 0, '0000-00-00', 0, 'rejected', 4),
 (12, 'Handfree', 'Samsung', '', 'good', '12_large_image_2.jpg', 20, 200, 0, 0, '2024-12-25', 6, 'approved', 5),
-(13, 'Handfree', 'Gioni', '', 'g6gj7j8u,ih7hmijjyhmhbnyn', '13_large_image_2.jpg', 1200, 455, 0, 0, '0000-00-00', 0, 'review', 4),
-(14, 'Handfree', 'Samsung', 'm8 95 c-pro', 'This is a quality handfree, which is really awesome and easily adjustable to any ear size.', '14school-building-vector-illustration-83905184.webp', 50, 100, 0, 0, '0000-00-00', 0, 'review', 4);
+(13, 'Handfree', 'Gioni', '', 'g6gj7j8u,ih7hmijjyhmhbnyn', '13_large_image_2.jpg', 1200, 455, 0, 0, '0000-00-00', 0, 'rejected', 4),
+(14, 'Handfree', 'Samsung', 'm8 95 c-pro', 'This is a quality handfree, which is really awesome and easily adjustable to any ear size.', '14school-building-vector-illustration-83905184.webp', 50, 2000, 0, 0, '2024-10-05', 10, 'approved', 4);
 
 -- --------------------------------------------------------
 
@@ -318,7 +318,9 @@ CREATE TABLE `item_rejection` (
 --
 
 INSERT INTO `item_rejection` (`rejection_id`, `rejection_reason`, `fk_item_id`) VALUES
-(1, 'The function might be working and your image quality is so low!', 11);
+(1, 'The function might be working and your image quality is so low!', 11),
+(2, 'Improve the image quality', 7),
+(3, 'Improve the image quality', 13);
 
 -- --------------------------------------------------------
 
@@ -356,7 +358,7 @@ CREATE TABLE `rider` (
   `rider_image` varchar(255) NOT NULL,
   `rider_email` varchar(255) NOT NULL,
   `rider_password` varchar(255) NOT NULL,
-  `rider_status` varchar(50) NOT NULL
+  `rider_status` varchar(50) NOT NULL DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -475,7 +477,8 @@ INSERT INTO `wholesaler` (`ws_id`, `ws_name`, `ws_company_name`, `ws_home_addres
 (2, 'Ali', '', 'sdh', 'ksdlfj', '+923135654321', '+923165673656', '76675-9876543-8', 'download (3).jpg', 'email@mail.com', 'active', '202cb962ac59075b964b07152d234b70'),
 (4, 'Abdullah Javaid', 'Himalayas', 'Gujranwala', 'Gujranwala', '+923145655543', '+923457666546', '34154-7654322-0', '4get_in_touch_image.jpg', 'abd@mail.com', 'active', '202cb962ac59075b964b07152d234b70'),
 (5, 'name', 'name', 'klsdjfl', 'lksjfd', '+923456556666', '+923336666666', '36363-8737033-4', '5whats_new.jpg', 's@s.com', 'active', '698d51a19d8a121ce581499d7b701668'),
-(6, 'js', 'js', 'gj', 'g', '+923154565456', '+923216776567', '32414-9876543-9', '6_large_image_1.jpg', 'email@z.com', 'active', '202cb962ac59075b964b07152d234b70');
+(6, 'js', 'js', 'gj', 'g', '+923154565456', '+923216776567', '32414-9876543-9', '6_large_image_1.jpg', 'email@z.com', 'active', '202cb962ac59075b964b07152d234b70'),
+(7, 'abd1', 'abd1', 'Gujranwala', 'Gujranwala', '+923457665454', '+923123454345', '65454-9876760-9', '7images-2.jpg', 'abd1@mail.com', 'active', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -668,7 +671,8 @@ ALTER TABLE `items_sold`
 -- Indexes for table `item_adjustment`
 --
 ALTER TABLE `item_adjustment`
-  ADD PRIMARY KEY (`item_adj_id`);
+  ADD PRIMARY KEY (`item_adj_id`),
+  ADD KEY `fk_item_id_for_item_adjustment` (`fk_item_id`);
 
 --
 -- Indexes for table `item_rejection`
@@ -764,6 +768,7 @@ ALTER TABLE `ws_payment_records`
 -- Indexes for table `ws_pending_payments`
 --
 ALTER TABLE `ws_pending_payments`
+  ADD PRIMARY KEY (`wspp_id`),
   ADD KEY `fk_ws_id_for_ws_pending_payments` (`fk_ws_id`);
 
 --
@@ -878,7 +883,7 @@ ALTER TABLE `item_adjustment`
 -- AUTO_INCREMENT for table `item_rejection`
 --
 ALTER TABLE `item_rejection`
-  MODIFY `rejection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `rejection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `item_tracking`
@@ -932,7 +937,7 @@ ALTER TABLE `warehouse`
 -- AUTO_INCREMENT for table `wholesaler`
 --
 ALTER TABLE `wholesaler`
-  MODIFY `ws_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ws_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `ws_notification`
@@ -951,6 +956,12 @@ ALTER TABLE `ws_payment_details`
 --
 ALTER TABLE `ws_payment_records`
   MODIFY `wsr_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ws_pending_payments`
+--
+ALTER TABLE `ws_pending_payments`
+  MODIFY `wspp_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `ws_warnings`
@@ -1036,6 +1047,12 @@ ALTER TABLE `items`
 --
 ALTER TABLE `items_sold`
   ADD CONSTRAINT `fk_item_id_for_items_sold` FOREIGN KEY (`fk_item_id`) REFERENCES `items` (`item_id`);
+
+--
+-- Constraints for table `item_adjustment`
+--
+ALTER TABLE `item_adjustment`
+  ADD CONSTRAINT `fk_item_id_for_item_adjustment` FOREIGN KEY (`fk_item_id`) REFERENCES `items` (`item_id`);
 
 --
 -- Constraints for table `item_rejection`
