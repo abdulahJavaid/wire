@@ -126,8 +126,8 @@ a:focus {
 .custom_nav-container .navbar-nav .nav-item .nav-link {
   padding: 5px 25px;
   color: white;
-  text-align: center;
-  text-transform: uppercase;
+  text-align: end;
+  text-transform: capitalize;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -135,7 +135,7 @@ a:focus {
 
 .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
 .custom_nav-container .navbar-nav .nav-item.active .nav-link {
-  color: black;
+  color: white;
   background-color: #eb1616;
 }
 
@@ -1013,7 +1013,7 @@ body > div > section.h-100.bg-light > div > div > div {
 .card-body.text-black input.form-control {
   color: white !important; /* Change text color inside input to white */
   background-color: #333 !important; /* Dark background color for input */
-  border-color: red !important; /* Red border */
+  border-color: #EB1616 !important; /* Red border */
 }
 
 /* Darken the placeholder text inside the input fields */
@@ -1023,8 +1023,8 @@ body > div > section.h-100.bg-light > div > div > div {
 
 /* Optional: Add focus effect for input fields */
 .card-body.text-black input.form-control:focus {
-  box-shadow: 0 0 5px red;
-  border-color: red !important;
+  box-shadow: 0 0 5px #EB1616;
+  border-color: #EB1616 !important;
   line-height: 5px;
 }
 /* end sign up form */
@@ -1048,7 +1048,7 @@ body > div > section.h-100.bg-light > div > div > div {
   margin-bottom: 10%;
 }
 #h3-ws-index h3:before {
-    background-color: red;
+    background-color: #EB1616;
     content: '';
     display: block;
     height: 3px;
@@ -1056,7 +1056,7 @@ body > div > section.h-100.bg-light > div > div > div {
     margin-bottom: 0;
 }
 #h3-ws-index h3:after {
-    background-color: red;
+    background-color: #EB1616;
     content: '';
     display: block;
   position:absolute; right:0; bottom:0;
@@ -1078,7 +1078,7 @@ body > div > section.h-100.bg-light > div > div > div {
   margin-bottom: 10%;
 }
 #h2-ws-index h2:before {
-    background-color: red;
+    background-color: #EB1616;
     content: '';
     display: block;
     height: 3px;
@@ -1086,7 +1086,7 @@ body > div > section.h-100.bg-light > div > div > div {
     margin-bottom: 0;
 }
 #h2-ws-index h2:after {
-    background-color: red;
+    background-color: #EB1616;
     content: '';
     display: block;
   position:absolute; right:0; bottom:0;
@@ -1110,6 +1110,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.71);
 }
 .slider_section {
   margin-top:70px;
@@ -1218,3 +1219,11 @@ body {
   opacity: 1;
 }
 /* end code for tooltip */
+
+/* colors for consisten design */
+.text-red {
+  color: #EB1616;
+}
+.bg-red {
+  background: #EB1616;
+}

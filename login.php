@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- <div class="card card-registration bg-dark my-4"> -->
               <div class="row g-0">
                 <div class="col-md-4 offset-md-2 d-none d-md-block">
-                  <img src="images/login-photo4.jpg" alt="Sample photo" class="img-fluid"
+                  <img src="images/photos/login-photo4.jpg" alt="Sample photo" class="img-fluid"
                     style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
                 </div>
                 <div class="col-md-4 bg-dark p-4 rounded-right">
@@ -64,9 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                       <div class="d-flex justify-content-end pt-2">
                         <button type="reset" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-sm" style="margin-right: 8px;">Reset</button>
-                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-sm">Log In</button>
+                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-sm bg-red">Log In</button>
                       </div>
-                      <p class="text-danger">No account? <a href="./signup.php" class="text-primary">signup</a></p>
+                      <p class="text-red">No account? <a href="./signup.php" class="text-primary">Signup</a></p>
                       
                       <?php
                       // Display error message if login fails

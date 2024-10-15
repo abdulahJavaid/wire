@@ -94,12 +94,12 @@ if (isset($_GET['m'])) {
         <!-- <div class="card card-registration bg-dark my-4"> -->
           <div class="row g-0">
             <div class="col-md-5 offset-md-1 d-none d-md-block">
-              <img src="images/signup-photo.webp" alt="Sample photo" class="img-fluid"
+              <img src="images/photos/signup-photo1.jpg" alt="Sample photo" class="img-fluid"
                 style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
             </div>
             <div class="col-md-5 rounded-right p-4 bg-dark">
               <div class="card-body p-md-2 text-black">
-                <h3 class="mb-5 text-capitalize"><strong>Supplier Registration</strong></h3>
+                <h3 class="mb-5 text-capitalize text-center"><strong>Supplier Registration</strong></h3>
 
                 <form action="" method="POST" enctype="multipart/form-data">
 
@@ -178,9 +178,9 @@ if (isset($_GET['m'])) {
 
                   <div class="d-flex justify-content-end pt-2">
                     <button type="reset" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-sm" style="margin-right: 8px;">Reset</button>
-                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-sm">Submit</button>
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-sm bg-red">Submit</button>
                   </div>
-                  <p class="text-danger">Already Registered? <a href="./login.php" class="text-primary">login</a></p>
+                  <p class="text-red">Already Registered? <a href="./login.php" class="text-primary">Login</a></p>
                 </form>
                 <!-- Form ends here -->
               </div>

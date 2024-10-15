@@ -26,12 +26,12 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <link rel="icon" href="images/fevicon/fevicon.png" type="image/gif" />
+  <link rel="icon" href="images/photos/logo-phone-mate-simple.png" type="image/gif" />
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Wire</title>
+  <title>Phone Mate</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -69,7 +69,7 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
             <a class="navbar-brand" href="">
               <!-- <span> -->
               <h4 class="project-heading">
-                <img src="./images/logo-phone-mate-simple.png" width="30px" height="30px" alt="phone-mate-logo"> Phone Mate
+                <img src="./images/photos/logo-phone-mate-simple.png" width="30px" height="30px" alt="phone-mate-logo"> Phone Mate
               </h4>
               <!-- <h1 class="anton-regulr">Wire</h1> -->
               <!-- </span> -->
@@ -88,13 +88,13 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link anton-regular" href="./index.php">Home <span class="visually-hidden">(current)</span></a>
+                    <a class="nav-link " href="./index.php">Home <span class="visually-hidden">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link anton-regular" href="./list-product.php">List Product</a>
+                    <a class="nav-link " href="./list-product.php">List Product</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link anton-regular" href="product.html">Products</a>
+                    <a class="nav-link " href="product.html">Products</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link anton-regular" href="product.html"> <i class="fa fa-user" aria-hidden="true"></i></a>

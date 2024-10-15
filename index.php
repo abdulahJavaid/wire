@@ -91,8 +91,8 @@ require_once("includes/slider.php");
                         }
                         ?>
                       </td>
-                      <td><button class="btn btn-sm btn-danger">Add</button></td>
-                      <td><button class="btn btn-sm btn-danger">View</button></td>
+                      <td><button class="btn btn-sm btn-danger bg-red">Add</button></td>
+                      <td><button class="btn btn-sm btn-danger bg-red">View</button></td>
                     </tr>
 
                 <?php

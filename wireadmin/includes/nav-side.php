@@ -21,13 +21,13 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
 
 <head>
     <meta charset="utf-8">
-    <title>Wire</title>
+    <title>Phone Mate</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="../../../images/photos/logo-phone-mate-simple.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,9 +96,9 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Listings</a>
                             <div class="dropdown-menu bg-transparent border-0">
-                                <a href="../listings/new-listings.php" class="dropdown-item">New Listings</a>
-                                <a href="../listings/price-adjustment.php" class="dropdown-item">Price Adjustment</a>
-                                <a href="../new-listings" class="dropdown-item">Processed Listings</a>
+                                <a href="../listings/new-listings.php" class="dropdown-item"><i class="fa fa-arrow-right" aria-hidden="true"></i> New Listings</a>
+                                <a href="../listings/price-adjustment.php" class="dropdown-item"><i class="fa fa-arrow-right" aria-hidden="true"></i> Price Adjustment</a>
+                                <a href="../new-listings" class="dropdown-item"><i class="fa fa-arrow-right" aria-hidden="true"></i> Processed Listings</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">

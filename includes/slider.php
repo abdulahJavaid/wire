@@ -11,7 +11,7 @@
             <div class="col-md-7">
               <div class="detail-box">
                 <h2 class="anton-regular">
-                  Welcome to Wire
+                  Welcome to Phone Mate
                 </h2>
                 <p>
                   At wire platform, we specialize in providing high-quality mobile accessories at wholesale prices.
@@ -19,10 +19,10 @@
                 </p>
 
                 <div class="btn-box">
-                  <a href="" class="btn1">
+                  <a href="" class="btn1 bg-red">
                     Contact Us
                   </a>
-                  <a href="" class="btn2">
+                  <a href="" class="btn2 bg-red">
                     About Us
                   </a>
                 </div>
