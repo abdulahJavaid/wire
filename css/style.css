@@ -1105,6 +1105,15 @@ body {
     background-color: #f8f9fa;
     font-family: 'Arial', sans-serif;
 }
+.header_section {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.slider_section {
+  margin-top:70px;
+}
 .card {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

@@ -39,34 +39,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col">
-            <div class="card card-registration bg-dark my-4">
+            <!-- <div class="card card-registration bg-dark my-4"> -->
               <div class="row g-0">
-                <div class="col-xl-6 d-none d-xl-block">
-                  <img src="images/2151039322.jpg" alt="Sample photo" class="img-fluid"
+                <div class="col-md-4 offset-md-2 d-none d-md-block">
+                  <img src="images/login-photo4.jpg" alt="Sample photo" class="img-fluid"
                     style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
                 </div>
-                <div class="col-xl-6">
+                <div class="col-md-4 bg-dark p-4 rounded-right">
                   <div class="card-body p-md-2 text-black">
-                    <h3 class="mb-5 text-uppercase mt-5 text-center ">Supplier Login</h3>
+                    <h3 class="mb-5 text-capitalize mt-5 text-center"><strong>Supplier Login</strong></h3>
 
                     <!-- Form starts here -->
                     <form action="" method="POST" enctype="multipart/form-data">
                       <br>
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3Example99" name="ws_email" class="form-control form-control-sm" required />
+                        <input type="text" id="form3Example99" name="ws_email" placeholder="email" class="form-control form-control-sm" required />
                         <label class="form-label" for="form3Example99">Email Address</label>
                       </div>
 
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3Example97" name="ws_password" class="form-control form-control-sm" required />
+                        <input type="password" id="form3Example97" name="ws_password" placeholder="password" class="form-control form-control-sm" required />
                         <label class="form-label" for="form3Example97">Password</label>
                       </div>
 
                       <div class="d-flex justify-content-end pt-2">
-                        <button type="reset" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-sm" style="margin-right: 8px;">Reset</button>
-                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-sm">Submit</button>
+                        <button type="reset" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-sm" style="margin-right: 8px;">Reset</button>
+                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-sm">Log In</button>
                       </div>
-
+                      <p class="text-danger">No account? <a href="./signup.php" class="text-primary">signup</a></p>
+                      
                       <?php
                       // Display error message if login fails
                       if (isset($_GET["error"])) {
@@ -78,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </div>
                 </div>
               </div>
-            </div>
+            <!-- </div> -->
           </div>
         </div>
       </div>

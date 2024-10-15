@@ -46,7 +46,7 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
   <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
-  
+
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
@@ -61,32 +61,34 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
 
   <div class="hero_area">
     <!-- header section strats -->
-    <header class="header_section" style="position: fixed; width: 100%; z-index: 2;">
+    <header class="header_section">
       <div class="navbar1">
         <div class="container-fluid">
 
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <nav class="navbar navbar-expand-sm navbar-dark custom_nav-container">
             <a class="navbar-brand" href="">
               <!-- <span> -->
-                <h5 class="project-heading">Phone Mate</h5>
-                <!-- <h1 class="anton-regulr">Wire</h1> -->
+              <h4 class="project-heading">
+                <img src="./images/logo-phone-mate-simple.png" width="30px" height="30px" alt="phone-mate-logo"> Phone Mate
+              </h4>
+              <!-- <h1 class="anton-regulr">Wire</h1> -->
               <!-- </span> -->
             </a>
             <?php
             // getting the url of the page
             $uri = "" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "";
 
-            // if the url is not signup.php page then shoe nav links
+            // if the url is not signup.php page then show nav links
             if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
             ?>
-              <button class="navbar-toggler" style="background: red;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class=""> </span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
               </button>
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav  ">
+                <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link anton-regular" href="./index.php">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link anton-regular" href="./index.php">Home <span class="visually-hidden">(current)</span></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link anton-regular" href="./list-product.php">List Product</a>
@@ -98,17 +100,12 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
                     <a class="nav-link anton-regular" href="product.html"> <i class="fa fa-user" aria-hidden="true"></i></a>
                   </li>
                 </ul>
-                <!-- <div class="user_optio_box">
-                  <a href=""> PRofile
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                  </a>
-                </div> -->
               </div>
             <?php
-              // closing the if statement (url page check)
             }
             ?>
           </nav>
+
         </div>
       </div>
     </header>
