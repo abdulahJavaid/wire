@@ -93,7 +93,7 @@ if (isset($_GET['m'])) {
       <div class="col">
         <!-- <div class="card card-registration bg-dark my-4"> -->
           <div class="row g-0">
-            <div class="col-md-5 offset-md-1 d-none d-md-block">
+            <div class="col-md-5 offset-md-1 d-none d-md-block px-0">
               <img src="images/photos/signup-photo1.jpg" alt="Sample photo" class="img-fluid"
                 style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
             </div>

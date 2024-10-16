@@ -1029,6 +1029,39 @@ body > div > section.h-100.bg-light > div > div > div {
 }
 /* end sign up form */
 
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+
+
 
 /* Style to remove margin of footer */
 .footer-p {
@@ -1040,6 +1073,16 @@ body > div > section.h-100.bg-light > div > div > div {
   font-family: "Anton", sans-serif;
   font-weight: 100;
   font-style: normal;
+}
+.anton-regular-normal {
+  font-family: "Anton", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+.anton-regular-bold {
+  font-family: "Anton", sans-serif;
+  /* font-weight: 100; */
+  font-style: bold;
 }
 
 /* Style for h3 (listed items) on index page */
@@ -1065,12 +1108,14 @@ body > div > section.h-100.bg-light > div > div > div {
     margin-right: 15px;
     margin-bottom: 8%;
 }
+/* Style for h3 (listed items) on index page */
 
 /* Padding for wholesaler index page */
 .padding-ws-index {
   margin-left: 3%;
   margin-right: 3%;
 }
+/* Padding for wholesaler index page */
 
 /* Style for h2 on list product page */
 #h2-ws-index {
@@ -1095,6 +1140,7 @@ body > div > section.h-100.bg-light > div > div > div {
     margin-right: 15px;
     margin-bottom: 8%;
 }
+/* Style for h2 on list product page */
 
 
 
@@ -1109,10 +1155,10 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 2000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.71);
 }
-.slider_section {
+.page-top-margin {
   margin-top:70px;
 }
 .card {
@@ -1226,4 +1272,12 @@ body {
 }
 .bg-red {
   background: #EB1616;
+}
+/* colors for consisten design */
+
+
+
+/* bs card custom design */
+.bs-card-header-height {
+  height: 60px;
 }

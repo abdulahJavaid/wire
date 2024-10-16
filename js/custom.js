@@ -145,6 +145,30 @@ $(document).ready(function() {
 
 
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // code for the image select and view on the list item form
 // 
 document.getElementById('uploadButton').addEventListener('click', function() {
