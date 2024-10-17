@@ -65,7 +65,7 @@ if (!str_contains($uri, 'signup.php') && !str_contains($uri, 'login.php')) {
       <div class="navbar1">
         <div class="container-fluid">
 
-          <nav class="navbar navbar-expand-sm navbar-dark custom_nav-container">
+          <nav class="navbar navbar-expand-sm navbar-dark custom_nav-container pt-1 pb-0">
             <a class="navbar-brand" href="">
               <!-- <span> -->
               <h4 class="project-heading">

@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Query to retrieve user from signup table
     $sql = "SELECT * FROM wholesaler WHERE ws_email = '$ws_email' AND ws_password = '$ws_password' AND ws_status='active'";
-    $result = mysqli_query($conn, $sql);
+    $result = query($sql);
 
     if (mysqli_num_rows($result) == 1) {
         // Set session variables

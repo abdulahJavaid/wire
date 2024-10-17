@@ -4,8 +4,8 @@ require_once("../../../includes/init.php");
 
 // getting the url of the page
 $uri = "" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "";
-if (str_contains($uri, '/wireadmin/pages/listings')) {
-    header("Location: http://localhost/wire/wireadmin/pages/listings/new-listings.php");
+if (str_contains($uri, '/admin/pages/listings')) {
+    header("Location: http://localhost/phonemate/admin/pages/listings/new-listings.php");
 }
 
 ?>

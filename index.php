@@ -46,7 +46,7 @@ require_once("includes/slider.php");
                 $query .= "items.fk_item_tracking_id=item_tracking.item_tracking_id WHERE ";
                 $query .= "fk_ws_id='$id' AND NOT item_status='rejected'";
 
-                $result = mysqli_query($conn, $query);
+                $result = query($query);
 
                 if (mysqli_num_rows($result) == 0) {
                   // code to show if the table is empty
@@ -151,7 +151,7 @@ require_once("includes/slider.php");
                 $query .= "ON items.fk_item_tracking_id=item_tracking.item_tracking_id WHERE ";
                 $query .= "fk_ws_id='$id' AND item_status='approved'";
 
-                $result = mysqli_query($conn, $query);
+                $result = query($query);
                 if (mysqli_num_rows($result) == 0) {
                   // code to show if the table is empty
                 ?>
@@ -256,7 +256,7 @@ require_once("includes/slider.php");
                 $query .= "ON items.fk_item_tracking_id=item_tracking.item_tracking_id WHERE ";
                 $query .= "fk_ws_id='$id' AND item_status='rejected'";
 
-                $result = mysqli_query($conn, $query);
+                $result = query($query);
                 if (mysqli_num_rows($result) == 0) {
                   // code to show if the table is empty
                 ?>
@@ -300,50 +300,6 @@ require_once("includes/slider.php");
   </div>
 </section>
 <!-- end section to view rejected items -->
-
-<!-- contact section -->
-<!-- <section class="contact_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Contact Us
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" placeholder="Your Name" />
-              </div>
-              <div>
-                <input type="text" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="email" placeholder="Email" />
-              </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Message" />
-              </div>
-              <div class="btn_box">
-                <button>
-                  SEND
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-md-6 ">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-<!-- end contact section -->
 
 <?php // requiring the footer of page
 require_once("includes/footer.php");
