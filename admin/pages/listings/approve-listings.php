@@ -28,33 +28,28 @@ if (!isset($_POST['item_id'])) {
 
 // approve the item of the seller
 if(isset($_POST['added'])){
-    $profit = escape($_POST['profit']);
-    $agreement = escape($_POST['agreement']);
-    $item_id = escape($_POST['item_id']);
+    $item = new Item();
+    $item->item_id = escape($_POST['item_id']);
+    $item->item_profit = escape($_POST['profit']);
+    $item->agreement_date = escape($_POST['agreement']);
+    $item->item_status = 'approved';
 
-    $query = "UPDATE items SET item_profit='$profit', agreement_date='$agreement', item_status='approved' ";
-    $query .= "WHERE item_id='$item_id'";
-
-    $result = query($query);
-    if($result){
+    if($item->update()){
         redirect("./");
     }
 }
 // reject the item of the seller
 if(isset($_POST['rejected'])){
-    $rejection = escape($_POST['r_reason']);
-    $item_id = escape($_POST['item_id']);
+    $item = new Item();
+    $item->item_id = escape($_POST['item_id']);
+    $item->item_status = 'rejected';
+    
+    if ($item->update()) {
+        $item_rejection = new ItemRejection();
+        $item_rejection->rejection_reason = escape($_POST['r_reason']);
+        $item_rejection->fk_item_id = escape($_POST['item_id']);
 
-    $query = "UPDATE items SET item_status='rejected' ";
-    $query .= "WHERE item_id='$item_id'";
-
-    $result = query($query);
-    if ($result) {
-        $query = "INSERT INTO item_rejection(rejection_reason, fk_item_id) ";
-        $query .= "VALUES('$rejection', '$item_id')";
-
-        $result1 = query($query);
-        if($result1){
+        if($item_rejection->insert()){
             redirect("./");
         }
     }

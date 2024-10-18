@@ -19,6 +19,7 @@ require_once(__DIR__ . "/classes/primary.php");
 require_once(__DIR__ . "/classes/item_tracking.php");
 require_once(__DIR__ . "/classes/item.php");
 require_once(__DIR__ . "/classes/wholesaler.php");
+require_once(__DIR__ . "/classes/item_rejection.php");
 
 
 

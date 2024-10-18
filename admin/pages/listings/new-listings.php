@@ -37,7 +37,7 @@ require_once("../../includes/nav-side.php");
                         // selecting all the values from the database which do not have a agreement date
                         $query = "SELECT * FROM items INNER JOIN item_tracking ON items.fk_item_tracking_id=item_tracking.item_tracking_id ";
                         $query .= "Where item_status='review'";
-                        $result = mysqli_query($conn, $query);
+                        $result = mysqli_query($db->conn, $query);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
 
